@@ -27,4 +27,5 @@ sudo apt-get install tree
 ```
 
 ### US Robotics 5637 Modem
-- See IoT Bytes entry [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
+- See IoT Bytes [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
+- [US Robotics 5637 User Guide](https://support.usr.com/support/5637/5637-ug/ref_cmd_use.html)
