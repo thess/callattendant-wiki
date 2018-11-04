@@ -1,4 +1,4 @@
-### Setup
+### Setup Notes
 ```
 sudo apt-get install git
 git clone https://github.com/emxsys/callattendant
@@ -12,6 +12,8 @@ sudo apt-get install python-beautifulsoup
 sudo apt-get install python-bs4
 
 pip install flask
+pip install flask-bootstrap
+pip install flask-moment
 pip install BeautifulSoup
 
 sudo apt-get install sqlitebrowser
