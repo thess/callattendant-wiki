@@ -2,4 +2,4 @@
 * _User Guide_
     * [[Installation|Installation]]
     * [[Configuration|Configuration]]
-    * [[Usage|Usage]]
+    * [[Web Interface|Web Interface]]
