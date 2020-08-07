@@ -109,7 +109,6 @@ VOICE_MAIL_MENU_FILE = "resources/voice_mail_menu.wav"
 ## Operation
 ### Starting the Call Attendant
 To start the system, run the Python 3 `callantendant.py` program with an optional configuration file. 
-
 Here are a couple of examples assuming you installed the __callattendant__ under the home folder on your
 Raspberry Pi:
 
@@ -133,7 +132,20 @@ http://<pi address|name>:5000
 ```
 You can view the web interface from the Raspberry Pi itself and from phones and computers on the same network as your Pi.
 
-#### Viewing the Call Log
+#### The Call Log
+The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
+It lists all the calls that have been screened by the __callattendant__.
+The _Action_ column shows hows the __callattendant__ handled the call.
+Clicking on a caller will take you to the [[_Manage Caller_|User-Guide#managing-callers]] page where you can manage the caller's
+membership in the [[_Permitted Numbers_|User-Guide#viewing-permitted-numbers]] and/or 
+[[_Blocked Numbers_|User-Guide#viewing-blocked-numbers]] lists.
+
+##### _Action_
+- __Permitted__: the caller is in the _Permitted Numbers_ list. The call was not blocked.
+- __Blocked__: the caller is in the _Blocked Numbers_ list or was found to be a robocaller or other nuisance. The call was blocked.
+- __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
+
+##### _Call Log example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log.png)
 
 #### Managing Callers
