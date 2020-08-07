@@ -20,7 +20,7 @@ You can rename the `callattendant-<version>` folder if you wish.
 - Delete the `callattendant-<version>` folder and its contents.
 
 #### Update
-If you are updating from a previous release, you should copy/move the `callattendant.db` file from the previous release to  `data/callattendant.db` in the new release.
+- If you are updating from a previous release, you should copy/move the `callattendant.db` file from the previous release to  `data/callattendant.db` in the new release.
 
 ***
 
