@@ -2,6 +2,7 @@
 1. [[Installation|User-Guide#installation]]
 2. [[Configuration|User-Guide#configuration]]
 3. [[Operation|User-Guide#operation]]
+4. [[Operation|User-Guide#web-interface]]
 
 ## Installation
 This section describes how to install the hardware and the software.
@@ -125,20 +126,20 @@ cd callattendant<-version>
 python3 src/callattendant.py --config app.cfg
 ```
 
-### Using the Web Interface
+## Web Interface
 To view the __callattendant__ web interface, simply point your browser to port 5000 on your Raspberry Pi, e.g., 
 ```
 http://<pi address|name>:5000
 ```
 You can view the web interface from the Raspberry Pi itself and from phones and computers on the same network as your Pi.
 
-#### The Call Log
+### The Call Log
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
 The _Action_ column shows hows the __callattendant__ handled the call.
-Clicking on a caller will take you to the [[_Manage Caller_|User-Guide#managing-callers]] page where you can manage the caller's
-membership in the [[_Permitted Numbers_|User-Guide#viewing-permitted-numbers]] and/or 
-[[_Blocked Numbers_|User-Guide#viewing-blocked-numbers]] lists.
+Clicking on a caller will take you to the [[Manage Caller|User-Guide#managing-callers]] page where you can manage the caller's
+membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and/or 
+[[Blocked Numbers|User-Guide#viewing-blocked-numbers]] lists.
 
 ##### _Action_
 - __Permitted__: the caller is in the _Permitted Numbers_ list. The call was not blocked.
@@ -148,16 +149,24 @@ membership in the [[_Permitted Numbers_|User-Guide#viewing-permitted-numbers]] a
 ##### _Call Log example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log.png)
 
-#### Managing Callers
+### Managing Callers
+
+##### _Manage Callers example_
 ![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller.png)
 
-#### Managing Voice Messages
+### Managing Voice Messages
+
+##### _Messages example_
 ![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages.png)
 
-#### Viewing Permitted Numbers
+### Viewing Permitted Numbers
+
+##### _Permitted Numbers example_
 ![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers.png)
 
-#### Viewing Blocked Numbers
+### Viewing Blocked Numbers
+
+##### _Blocked Numbers example_
 ![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers.png)
 
 
