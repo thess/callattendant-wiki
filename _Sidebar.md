@@ -4,5 +4,5 @@
     * [[Configuration|User-Guide#configuration]]
     * [[Operations|User-Guide#operations]]
 * [[Developer Guide|Developer-Guide]]
-* _Advanced_
-    * [[Run as a Service|Run as a Service]]
+* [[Advanced|Advanced]]
+    * [[Run as a Service|Advanced#run-as-a-service]]
