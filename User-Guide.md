@@ -22,10 +22,11 @@ and shared with the house phone wiring.
 _TODO: Raspberry PI LED connections_
 
 ### Software
-#### Install
+
+#### Step 1. Download
 1. [Download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or choose a
 [specific release](https://github.com/emxsys/callattendant/releases).
-2. Unzip the downloaded version. The unzpped folder will be named `callattendant-master` or 
+2. Unzip the downloaded version. The unzipped folder will be named `callattendant-master` or 
 `callattendant-<version>` depending on what you downloaded. Here's how unzip it into your home folder, 
 using the latest version (_master_) in the example:
 ```bash
@@ -35,11 +36,19 @@ cd callattendant-master
 ```
 You can rename the `callattendant-<version>` folder if you wish.
 
-#### Removal
-- Delete the `callattendant-<version>` folder and its contents.
+#### Step 2. Install Dependencies
 
-#### Update
-- If you are updating from a previous release, you should copy/move the `callattendant.db` file from the previous release to  `data/callattendant.db` in the new release.
+We've provided a requirements file called `requirements.txt`. Let's use it to
+install the required packages. But first, navigate to the folder where the 
+callattendant repository was placed, e.g., `/pi/home/callattendant`.
+
+```bash
+$ pip3 install -r requirements.txt
+```
+
+#### Step 3. If Updating 
+
+If you are updating from a previous release, you should copy/move the `callattendant.db` file from the previous release to  `data/callattendant.db` in the new release.
 
 ***
 
