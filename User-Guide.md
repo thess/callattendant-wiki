@@ -151,13 +151,18 @@ python3 src/callattendant.py --config app.cfg
 ***
 
 ## Web Interface
-To view the __callattendant__ web interface, simply point your browser to port `5000` on your Raspberry Pi.
+To view the __callattendant__ web interface, simply point your browser to your Raspberry Pi's port `5000`.
 You can view the web interface from the Raspberry Pi itself and from any phone or computer that's on the 
-same network as your Pi. Example URL:
-```
-http://<pi address|name>:5000
-```
+same network as your Pi. 
 
+The URL using your Raspberry Pi's actual IP address or name for _pi-address_ or _pi-name_:
+```
+http://<pi-address|pi-name|localhost>:5000
+```
+For example, in your Raspberry Pi's browser, you could use:
+```
+http://localhost:5000
+```
 ### The Call Log
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
