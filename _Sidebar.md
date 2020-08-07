@@ -3,6 +3,7 @@
     * [[Installation|User-Guide#installation]]
     * [[Configuration|User-Guide#configuration]]
     * [[Operation|User-Guide#operation]]
+    * [[Web Interface|User-Guide#web-interface]]
 * [[Developer Guide|Developer-Guide]]
 * [[Advanced|Advanced]]
     * [[Run as a Service|Advanced#run-as-a-service]]
