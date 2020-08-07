@@ -1,4 +1,4 @@
-# Call Attendant Wiki
+# Call Attendant
 
 * [[User Guide|User-Guide]]
 * [[Developer Guide|Developer-Guide]]
