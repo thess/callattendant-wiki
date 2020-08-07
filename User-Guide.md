@@ -1,4 +1,6 @@
 ## Installation
+This section describes how to install the hardware and the software.
+
 ### Hardware
 Connecting the Raspberry Pi and modem to your home phone system...
 
