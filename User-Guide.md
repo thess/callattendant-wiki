@@ -10,10 +10,16 @@
 This section describes how to install the hardware and the software.
 
 ### Hardware
-Connecting the Raspberry Pi and modem to your home phone system...
+* The USR5637 Modem is connect to your Raspberry Pi via USB
+* Your home phone system is connected to the USR5637 Modem via the RJ11 connection to a wall jack,
+or to a splitter connected to a wall jack and shared with a phone, or a splitter connected to your Telco modem
+and shared with the house phone wiring.
+* Your Raspberry Pi is connected to your home network via wireless or an RJ45 network connection.
 
-- TODO: Wiring
-- TODO: LED indicators
+##### Schematic
+![Hardware Connections](https://github.com/emxsys/callattendant/blob/master/docs/images/Deployment_View.png)
+
+_TODO: Raspberry PI LED connections_
 
 ### Software
 #### Install
