@@ -2,7 +2,7 @@
 1. [[Installation|User-Guide#installation]]
 2. [[Configuration|User-Guide#configuration]]
 3. [[Operation|User-Guide#operation]]
-4. [[Operation|User-Guide#web-interface]]
+4. [[Web Interface|User-Guide#web-interface]]
 
 ## Installation
 This section describes how to install the hardware and the software.
