@@ -6,3 +6,4 @@
 * [[Developer Guide|Developer-Guide]]
 * [[Advanced|Advanced]]
     * [[Run as a Service|Advanced#run-as-a-service]]
+    * [[Record Audio Files|Advanced#record-audio-files]]
