@@ -4,11 +4,16 @@
 3. [[Operation|User-Guide#operation]]
 4. [[Web Interface|User-Guide#web-interface]]
 
+***
+
 ## Installation
 This section describes how to install the hardware and the software.
 
 ### Hardware
 Connecting the Raspberry Pi and modem to your home phone system...
+
+- TODO: Wiring
+- TODO: LED indicators
 
 ### Software
 #### Install
@@ -33,50 +38,62 @@ You can rename the `callattendant-<version>` folder if you wish.
 ***
 
 ## Configuration
-Configuration file ...
+To override the default configuration, copy the `src/app.example` file to a new file, e.g. `src/app.cfg` and edit its contents.
+Use an editor that provides Python syntax highlighting, like `nano`.  Then use your configuration file when starting the 
+__callattendant__. See [[Starting the Call Attendant|]] for an example.
+
+Following are select configuration elements that may be of interest, the default values are shown:
+
+##### Block Enabled
+Set to False to disable call blocking (for whatever reason)
+```python
+# BLOCK_ENABLED: if True calls that fail screening will be blocked
+BLOCK_ENABLED = True
+```
+##### Screening mode
+Determines whether the permitted (whitelist) and blocked (blacklist) number lists are processed.
 ```python
 # SCREENING_MODE: A tuple containing: "whitelist" and/or "blacklist", or empty
 SCREENING_MODE = ("whitelist", "blacklist")
-
-# BLOCK_ENABLED: if True calls that fail screening will be blocked
-BLOCK_ENABLED = True
-
+```
+##### Name Patterns
+Blocks callers whose caller ID name match a regular expression:
+```python
 # BLOCK_NAME_PATTERNS: A regex expression dict applied to the CID names
 # Example: {"V[0-9]{15}": "Telemarketer Caller ID", "O": "Unknown caller"}
 BLOCK_NAME_PATTERNS = {"V[0-9]{15}": "Telemarketer Caller ID", }
-
+```
+##### Number Patterns
+Blocks callers whose number match a regular expression, for example an area code:
+```python
 # BLOCK_NUMBER_PATTERNS: A regx expression dict applied to the CID numbers
 # Example: {"P": "Private number",}
 BLOCK_NUMBER_PATTERNS = {}
-
+```
+##### Blocked Actions
+Determines what action is taken for a blocked caller:
+```python
 # BLOCKED_ACTIONS: A tuple containing a combination of the following actions:
 #   "greeting", "record_message", "voice_mail".
-#
-# These actions are performed before hanging up.
-#
-# Note: the  "record_message", "voice_mail" actions are mutually exclusive.
-# Also Note: A trailing comma is REQUIRED for a tuple with just one item
-#
 # Example: No actions, just hang_up
 #   BLOCKED_ACTIONS = ()
-#
 # Example: Play an announcement before hanging up
 #   BLOCKED_ACTIONS = ("greeting", )
-#
-# Example: Record a message before hanging up, no keypress required
+# Example: Record a message before hanging up, no key-press required
 #   BLOCKED_ACTIONS = ("record_message", )
-#
-# Example: Option to record a message; keypress required to leave message
+# Example: Option to record a message; key-press required to leave message
 #   BLOCKED_ACTIONS = ("voice_mail", )
-#
-# Example: Play announcment and record a message; no keypress required
+# Example: Play announcement and record a message; no key-press required
 #   BLOCKED_ACTIONS = ("greeting", "record_message" )
-#
-# Example: Play announcment and voice mail menu; keypress required to leave message
+# Example: Play announcement and voice mail menu; key-press required to leave message
 #   BLOCKED_ACTIONS = ("greeting", "voice_mail" )
 #
 BLOCKED_ACTIONS = ("greeting", "voice_mail")
-
+```
+##### Audio WAV files
+Various audio wav files may be played to the caller. You can record your own
+and specify them with these settings:
+```python
 # BLOCKED_GREETING_FILE: The wav file to be played to blocked callers.
 #   Example: "We're sorry, this call has been blocked by the Raspberry Pi
 #           call attendant. To be unblocked, leave a message with your
@@ -102,7 +119,6 @@ VOICE_MAIL_LEAVE_MESSAGE_FILE = "resources/please_leave_message.wav"
 # VOICE_MAIL_MENU_FILE: The wav file with message instructions, played after the greeting
 #   Example: "Press 1 to leave a message..."
 VOICE_MAIL_MENU_FILE = "resources/voice_mail_menu.wav"
-
 ```
 
 ***
@@ -126,6 +142,8 @@ cd callattendant<-version>
 python3 src/callattendant.py --config app.cfg
 ```
 
+***
+
 ## Web Interface
 To view the __callattendant__ web interface, simply point your browser to port `5000` on your Raspberry Pi.
 You can view the web interface from the Raspberry Pi itself and from any phone or computer that's on the 
@@ -137,7 +155,7 @@ http://<pi address|name>:5000
 ### The Call Log
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
-The _Action_ column shows hows the __callattendant__ handled the call.
+The _Action_ column shows how the __callattendant__ handled the call.
 Clicking on a caller will take you to the [[Manage Caller|User-Guide#managing-callers]] page where you can manage the caller's
 membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and/or 
 [[Blocked Numbers|User-Guide#viewing-blocked-numbers]] lists.
