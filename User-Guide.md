@@ -134,13 +134,18 @@ http://<pi address|name>:5000
 You can view the web interface from the Raspberry Pi itself and from phones and computers on the same network as your Pi.
 
 #### Viewing the Call Log
+![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log.png)
 
 #### Managing Callers
+![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller.png)
 
 #### Managing Voice Messages
+![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages.png)
 
 #### Viewing Permitted Numbers
+![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers.png)
 
 #### Viewing Blocked Numbers
+![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers.png)
 
 
