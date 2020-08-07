@@ -62,7 +62,7 @@ For every change that we do on the `/lib/systemd/system` folder we need to execu
 - https://coreos.com/os/docs/latest/getting-started-with-systemd.html
 
 ***
-## Record Your Own Audio Files
+## Record Audio Files
 You can record your own audio wav files for playback to your callers.
 
 See: (https://iotbytes.wordpress.com/play-audio-file-on-phone-line-with-raspberry-pi/)
