@@ -55,7 +55,7 @@ If you are updating from a previous release, you should copy/move the `callatten
 ## Configuration
 To override the default configuration, copy the `src/app.example` file to a new file, e.g. `src/app.cfg` and edit its contents.
 Use an editor that provides Python syntax highlighting, like `nano`.  Then use your configuration file when starting the 
-__callattendant__. See [[Starting the Call Attendant|]] for an example.
+__callattendant__. See [[Starting the Call Attendant|User-Guide#starting-the-call-attendant]] for an example.
 
 Following are select configuration elements that may be of interest, the default values are shown:
 
