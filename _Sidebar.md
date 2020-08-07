@@ -2,6 +2,6 @@
 * _User Guide_
     * [[Installation|Installation]]
     * [[Configuration|Configuration]]
-    * [[Web Interface|Web Interface]]
+    * [[Operations|Operations]]
 * _Advanced_
     * [[Run as a Service|Run as a Service]]
