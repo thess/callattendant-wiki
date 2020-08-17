@@ -1,18 +1,19 @@
 ##### Contents
-
+1. Overview
+1. Navigation
+1. Home | Dashboard
+1. Call Log | Call History
+1. Viewing a Call
+1. Managing a Caller
+1. Managing Voice Messages
+1. Managing the Permitted Numbers
+1. Managing the Blocked Numbers
 
 ***
-## Web Interface
+## Overview
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
-
-##### _Dashboard | Home page examples on an IPad Pro and Pixel2 phone_
-![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
----
-The __callattendant__'s web interface uses a responsive design: you can review your calls and messages on your phone,
-tablet or computer.
-
-To view the web interface, simply point your browser to port `5000` on your Raspberry Pi.
-If you haven't used _ports_ before, you simply append the port number, prefixed with a colon
+To view the web interface, simply point your web browser to port `5000` on your Raspberry Pi.
+If you haven't used _ports_ before, you simply append the port number, prefixed with a colon,
 to the web address, e.g., `:5000`.
 
 For example, in your Raspberry Pi's browser, you can use:
@@ -27,6 +28,13 @@ At my home, my Pi's host hame is `pi-blocker`, so I use this address:
 ```
 http://pi-blocker:5000
 ```
+Following is an example of the home page you will see:
+##### _Home page examples on an IPad Pro and Pixel2 phone_
+![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
+
+The __callattendant__'s web interface uses a responsive design: you can review your calls and messages on your phone,
+tablet or computer.
+
 You can view the web interface from any phone or computer that's on
 the same network as the Pi.
 
@@ -62,10 +70,10 @@ the same network as the Pi.
 
 #### Top Blocked Callers
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-blocked-callers.png)
+
 ***
 ## The Call Log | Call History
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
-
 
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
