@@ -1,4 +1,45 @@
-### Software
+#### Contents
+1. [[Software Architecture|Developer-Guide#software-architecture]]
+2. [[Software Project|Developer-Guide#software-project]]
+
+***
+
+## Software Architecture
+### Architectural Viewpoints
+###### _Rational Unified Process 4+1 View_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/RUP_41_View.png "RUP 4+1 View")
+
+### Use Case View
+###### _Use Case Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Use_Case_View.png "Use Case Diagram")
+
+### Logical View
+###### _Class Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Logical_View.png "Logical View Diagram")
+
+### Process View
+###### _Activity Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Process_View.png "Process View Diagram")
+
+###### _Sequence Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Main_Sequence_Diagram.png "Main Sequence Diagram")
+
+### Implementation View
+###### _Component Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Implementation_View.png "Implementation Diagram")
+
+### Deployment View
+###### _Deployment Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Deployment_View.png "Deployment Diagram")
+
+### Data View
+###### _Entity Relationship Diagram_
+![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/images/Data_View.png "Entity Relationship Diagram")
+
+***
+
+## Software Project
+### Download Repository
 
 You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`.
 You can either clone this repository, or [download a zip file](https://github.com/emxsys/callattendant/archive/master.zip),
