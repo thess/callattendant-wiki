@@ -33,14 +33,17 @@ the same network as the Pi.
 ***
 
 ## Dashboard | Home
+### URL: `http://<pi-address>|<pi-hostname>:5000`
+
 ##### _Dashboard | Home page on IPad_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
-
 
 
 ***
 
 ## The Call Log | Call History
+### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
+
 
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
@@ -52,17 +55,20 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 - __Permitted__: the caller is in the _Permitted Numbers_ list. The call was not blocked.
 - __Blocked__: the caller is in the _Blocked Numbers_ list or was found to be a robocaller or other nuisance. The call was blocked.
 - __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
+
 ##### _Call Log example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log-ipad.png)
 
 ***
 ## Viewing Calls
-Call details
+### URL: `http://<pi-address>|<pi-hostname>:5000/calls/view/<call-number>`
+
 ##### _Viewing Call example on phone_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/view-call-pixel2.png)
 ***
 
 ## Managing Callers
+### URL: `http://<pi-address>|<pi-hostname>:5000/caller/manage/<call-number>`
 The _Manage Caller_ page is where you manage the caller's membership in the 
 [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and/or 
 [[Blocked Numbers|User-Guide#viewing-blocked-numbers]] lists. A caller can be
@@ -75,6 +81,7 @@ a caller on the [[Call Log|User-Guide#the-call-log]] page.
 ***
 
 ## Managing Voice Messages
+### URL: `http://<pi-address>|<pi-hostname>:5000/messages`
 The _Messages_ page is where you listen to and/or delete voices messages left by blocked callers.
 This page is accessed by selecting _Messages_ from the main menu.
 ##### _Messages example_
@@ -83,6 +90,7 @@ This page is accessed by selecting _Messages_ from the main menu.
 ***
 
 ## Viewing Permitted Numbers
+### URL: `http://<pi-address>|<pi-hostname>:5000/permitted`
 The  _Permitted Numbers_ page is where you view the permitted numbers.
 This page is accessed by selecting _Permitted_ from the main menu.
 ##### _Permitted Numbers example_
@@ -91,6 +99,7 @@ This page is accessed by selecting _Permitted_ from the main menu.
 ***
 
 ## Viewing Blocked Numbers
+### URL: `http://<pi-address>|<pi-hostname>:5000/blocked`
 The  _Blocked Numbers_ page is where you view the blocked numbers.
 This page is accessed by selecting _Blocked_ from the main menu.
 ##### _Blocked Numbers example_
