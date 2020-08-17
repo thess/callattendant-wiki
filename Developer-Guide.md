@@ -1,8 +1,24 @@
 #### Contents
-1. [[Software Architecture|Developer-Guide#software-architecture]]
-2. [[Software Project|Developer-Guide#software-project]]
+1. [[Software Development Plan|Developer-Guide#Software-Development-Plan]]
+2. [[Software Architecture|Developer-Guide#software-architecture]]
+3. [[Software Project|Developer-Guide#software-project]]
 
 ***
+## Overview
+TODO
+
+## Software Development Plan
+The development plan's [phase objectives](https://github.com/emxsys/callattendant/projects?query=is%3Aopen+sort%3Acreated-asc) are captured in the GitHub projects.
+### [Inception Phase](https://github.com/emxsys/callattendant/projects/1)
+- [x] Iteration #I1: [v0.1](https://github.com/emxsys/callattendant/releases/tag/v0.1)
+### [Elaboration Phase](https://github.com/emxsys/callattendant/projects/2)
+- [x] Iteration #E1: [v0.2](https://github.com/emxsys/callattendant/releases/tag/v0.2)
+### [Construction Phase](https://github.com/emxsys/callattendant/projects/3)
+- [x] Iteration #C1: [v0.3](https://github.com/emxsys/callattendant/releases/tag/v0.3)
+- [x] Iteration #C2: [v0.4](https://github.com/emxsys/callattendant/releases/tag/v0.4)
+- [ ] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+0.5%22)
+### [Transition Phase](https://github.com/emxsys/callattendant/projects/4)
+- [ ] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+1.0%22)
 
 ## Software Architecture
 ### Architectural Viewpoints
