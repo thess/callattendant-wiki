@@ -3,17 +3,17 @@
 
 ***
 ## Web Interface
+### URL: `http://<pi-address>|<pi-hostname>:5000`
 
+##### _Dashboard | Home page examples on an IPad Pro and Pixel2 phone_
+![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
+---
 The __callattendant__'s web interface uses a responsive design: you can review your calls and messages on your phone,
 tablet or computer.
 
-TODO: Show example layouts here
-
-##### URL: `http://<pi-address>|<pi-hostname>:5000`
-
 To view the web interface, simply point your browser to port `5000` on your Raspberry Pi.
-If you haven't used "ports" before, you simply append `:5000` to the IP address or the host name
-of your Raspberry Pi.
+If you haven't used _ports_ before, you simply append the port number, prefixed with a colon
+to the web address, e.g., `:5000`.
 
 For example, in your Raspberry Pi's browser, you can use:
 ```
@@ -33,6 +33,8 @@ the same network as the Pi.
 ***
 
 ## Dashboard | Home
+##### _Dashboard | Home page on IPad_
+![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
 
 
@@ -51,12 +53,13 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 - __Blocked__: the caller is in the _Blocked Numbers_ list or was found to be a robocaller or other nuisance. The call was blocked.
 - __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
 ##### _Call Log example_
-![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log.png)
+![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log-ipad.png)
 
 ***
 ## Viewing Calls
 Call details
-
+##### _Viewing Call example on phone_
+![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/view-call-pixel2.png)
 ***
 
 ## Managing Callers
@@ -67,7 +70,7 @@ a member of both lists, however the _Permitted Number_ membership will have
 precedence over the _Blocked Number_. This page is accessed by clicking/selecting
 a caller on the [[Call Log|User-Guide#the-call-log]] page.
 ##### _Manage Callers example_
-![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller.png)
+![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller-pixel2.png)
 
 ***
 
@@ -75,7 +78,7 @@ a caller on the [[Call Log|User-Guide#the-call-log]] page.
 The _Messages_ page is where you listen to and/or delete voices messages left by blocked callers.
 This page is accessed by selecting _Messages_ from the main menu.
 ##### _Messages example_
-![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages.png)
+![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages-ipad.png)
 
 ***
 
@@ -83,7 +86,7 @@ This page is accessed by selecting _Messages_ from the main menu.
 The  _Permitted Numbers_ page is where you view the permitted numbers.
 This page is accessed by selecting _Permitted_ from the main menu.
 ##### _Permitted Numbers example_
-![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers.png)
+![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers-ipad.png)
 
 ***
 
@@ -91,6 +94,6 @@ This page is accessed by selecting _Permitted_ from the main menu.
 The  _Blocked Numbers_ page is where you view the blocked numbers.
 This page is accessed by selecting _Blocked_ from the main menu.
 ##### _Blocked Numbers example_
-![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers.png)
+![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers-ipad.png)
 
 
