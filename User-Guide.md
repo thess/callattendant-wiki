@@ -31,16 +31,38 @@ You can view the web interface from any phone or computer that's on
 the same network as the Pi.
 
 ***
+## Navigation
+##### _Main Menu_
+![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar.png)
 
+##### _Main Menu expanded on phone_
+![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar-pixel2.png)
+
+***
 ## Dashboard | Home
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
 
 ##### _Dashboard | Home page on IPad_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
+#### Statistics
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-statistics.png)
 
+#### New Messages
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-messages-waiting.png)
+
+#### Recent Calls
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-recent-calls.png)
+
+#### Calls per Day
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-calls-per-date.png)
+
+#### Top Permitted Callers
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-permitted-callers.png)
+
+#### Top Blocked Callers
+![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-blocked-callers.png)
 ***
-
 ## The Call Log | Call History
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
 
