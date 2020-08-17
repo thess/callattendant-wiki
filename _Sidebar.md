@@ -9,6 +9,8 @@
     * [[Blocked Numbers|User-Guide#blocked-numbers]]
     * [[Voice Messages|User-Guide#voice-messages]]
 * [[Developer Guide|Developer-Guide]]
+    * [[Software Architecture|Developer-Guide#software-architecture]]
+    * [[Software Project|Developer-Guide#software-project]]
 * [[Advanced|Advanced]]
     * [[Run as a Service|Advanced#run-as-a-service]]
     * [[Record Audio Files|Advanced#record-audio-files]]
