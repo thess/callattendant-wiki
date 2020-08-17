@@ -40,36 +40,73 @@ the same network as the Pi.
 
 ***
 ## Navigation
+The __callattendant__ uses a consistent menu across the entire application. The menu adapts to your screen size.  
 ##### _Main Menu_
 ![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar.png)
 
 ##### _Main Menu expanded on phone_
 ![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar-pixel2.png)
 
+* **Call Attendant** displays the Home page / Dashboard. This menu item is always in view.
+* **Calls** displays the Call Log / Call History page.
+* **Permitted** displays the page for managing the membership in the Permitted Numbers list.
+* **Blocked** displays the page for managing the membership in the Blocked Numbers list.
+* **Messages** displays the page for playing and managing voice messages left by callers.
+* **Help** displays this Wiki User Guide
+* **Search** displays the call history for the given phone number
+
 ***
+
 ## Dashboard | Home
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
-
 ##### _Dashboard | Home page on IPad_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
+The Dashboard is the home page for the application.
+
+---
 #### Statistics
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-statistics.png)
 
+Here we have some overall statistics since the Call Attendant was installed.
+* **Calls processed** is the overall number of calls received. This is also a link to the Call Log.
+* **Calls blocked** is the number of calls blocked by the Call Attendant.
+* **Percent Blocked** is the percentage of calls that were blocked. This is also a link to the Calls per Day graph.
+
+---
 #### New Messages
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-messages-waiting.png)
 
+This button appears when there are new voices messages waiting to be played. Clicking this button
+will take you to the Messages page.
+
+---
 #### Recent Calls
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-recent-calls.png)
 
+This section shows you the last 10 calls received.
+
+* The Phone Numbers in the Caller column are links to the View Call page, where you can get all the details about the call.
+* The Actions column shows you what action was taken by the Call Attendant, include whether a voice message was recorded, and whether it has been played or not.
+* The color of the rows indicates whether the caller is currently in the Permitted Numbers list (green) or Blocked Numbers list (red).
+
+---
 #### Calls per Day
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-calls-per-date.png)
 
+This stacked bar graph displays the number of calls per day for the last 30 days. 
+
+---
 #### Top Permitted Callers
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-permitted-callers.png)
 
+This list shows the top permitted and screened callers (aka allowed callers) since the application was installed.
+
+---
 #### Top Blocked Callers
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-blocked-callers.png)
+
+This list shows the top blocked callers (aka denied callers) since the application was installed.
 
 ***
 ## The Call Log | Call History
