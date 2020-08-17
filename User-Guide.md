@@ -4,22 +4,41 @@
 ***
 ## Web Interface
 
-To view the __callattendant__ web interface, simply point your browser to your Raspberry Pi's port `5000`.
-You can view the web interface from the Raspberry Pi's browser, and from any phone or computer that's on the 
-same network as your Pi, e.g., `http://<address|hostname|localhost>:5000`
+The __callattendant__'s web interface uses a responsive design: you can review your calls and messages on your phone,
+tablet or computer.
+
+TODO: Show example layouts here
+
+##### URL: `http://<pi-address>|<pi-hostname>:5000`
+
+To view the web interface, simply point your browser to port `5000` on your Raspberry Pi.
+If you haven't used "ports" before, you simply append `:5000` to the IP address or the host name
+of your Raspberry Pi.
 
 For example, in your Raspberry Pi's browser, you can use:
 ```
 http://localhost:5000
 ```
-And, for example, from your phone or computer, use your Raspberry Pi's host name or IP address:
+Here's a example using a typical IP address on a home network (your Raspberry Pi's address may be different):
 ```
-http://<address>|<hostname>:5000
+http://192.168.1.254:5000
 ```
+At my home, my Pi's host hame is `pi-blocker`, so I use this address:
+```
+http://pi-blocker:5000
+```
+You can view the web interface from any phone or computer that's on
+the same network as the Pi.
 
 ***
 
-## The Call Log
+## Dashboard | Home
+
+
+
+***
+
+## The Call Log | Call History
 
 The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
@@ -33,6 +52,10 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 - __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
 ##### _Call Log example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log.png)
+
+***
+## Viewing Calls
+Call details
 
 ***
 
