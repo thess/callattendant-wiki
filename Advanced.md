@@ -20,7 +20,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python /home/pi/callattendant/src/callattendant.py
+ExecStart=/usr/bin/python3 -u /home/pi/callattendant/src/callattendant.py
 WorkingDirectory=/home/pi/callattendant/src
 Restart=on-abort
 
