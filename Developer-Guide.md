@@ -2,6 +2,7 @@
 1. [[Software Architecture|Developer-Guide#software-architecture]]
 2. [[Software Development Plan|Developer-Guide#Software-Development-Plan]]
 3. [[Software Project Setup|Developer-Guide#software-project-setup]]
+4. [[Additional Information|Developer-Guide#additional-information]]
 
 ***
 
@@ -206,3 +207,17 @@ sqlitebrowser callattendant.db
 ### US Robotics 5637 Modem
 - See IoT Bytes [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
 - [US Robotics 5637 User Guide](https://support.usr.com/support/5637/5637-ug/ref_cmd_use.html)
+
+### More information
+The Call Attendant project was inspired by the [pamapa/callblocker](https://github.com/pamapa/callblocker) project,
+an excellent Raspberry Pi based call blocker.  However, the __callattendant__ differs from the __callblocker__ in that adds
+voice messaging; and the __callattendant__ is written entirely in Python, uses SQLite for the call logging, and
+implments the web interface with Flask.
+
+The following blogs from [IoT Bytes by Pradeep Singh](https://iotbytes.wordpress.com/) were very useful for learning to how
+to program the Raspberry Pi and the US Robotics 5637 modem. His blog site has many Raspberry Pi resources. Thanks Pradeep!
+
+- [Incoming Call Details Logger with Raspberry Pi](https://iotbytes.wordpress.com/incoming-call-details-logger-with-raspberry-pi/)
+- [Play Audio File on Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/play-audio-file-on-phone-line-with-raspberry-pi/)
+- [Record Audio from Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/record-audio-from-phone-line-with-raspberry-pi/)
+
