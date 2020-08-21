@@ -39,7 +39,10 @@ tablet or computer.
 You can view the web interface from any phone or computer that's on
 the same network as the Pi.
 
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
+
 ## Navigation
 The __callattendant__ uses a consistent menu across the entire application. The menu adapts to your screen size.  
 ##### _Main Menu_
@@ -55,6 +58,8 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 * **Messages** displays the page for playing and managing voice messages left by callers.
 * **Help** displays this Wiki User Guide
 * **Search** displays the call history for the given phone number
+
+###### _[[Back to Contents|User-Guide#contents]]_
 
 ***
 
@@ -110,7 +115,10 @@ This list shows the top permitted and screened callers (aka allowed callers) sin
 
 This list shows the top blocked callers (aka denied callers) since the application was installed.
 
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
+
 ## Viewing Call History
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
 
@@ -128,12 +136,17 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 ##### _Call Log example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log-ipad.png)
 
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
 ## Viewing Calls
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls/view/<call-number>`
 
 ##### _Viewing Call example on phone_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/view-call-pixel2.png)
+
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
 
 ## Managing Callers
@@ -147,6 +160,8 @@ a caller on the [[Call Log|User-Guide#the-call-log]] page.
 ##### _Manage Callers example_
 ![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller-pixel2.png)
 
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
 
 ## Managing Voice Messages
@@ -155,6 +170,8 @@ The _Messages_ page is where you listen to and/or delete voices messages left by
 This page is accessed by selecting _Messages_ from the main menu.
 ##### _Messages example_
 ![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages-ipad.png)
+
+###### _[[Back to Contents|User-Guide#contents]]_
 
 ***
 
@@ -165,6 +182,8 @@ This page is accessed by selecting _Permitted_ from the main menu.
 ##### _Permitted Numbers example_
 ![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers-ipad.png)
 
+###### _[[Back to Contents|User-Guide#contents]]_
+
 ***
 
 ## Viewing Blocked Numbers
@@ -174,4 +193,6 @@ This page is accessed by selecting _Blocked_ from the main menu.
 ##### _Blocked Numbers example_
 ![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers-ipad.png)
 
+###### _[[Back to Contents|User-Guide#contents]]_
 
+***
