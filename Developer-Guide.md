@@ -232,6 +232,28 @@ cd ~/callattendant/callattendant
 python -m pytest ../tests
 ```
 
+### PyPI
+
+```bash
+# Make sure you have the latest versions of setuptools and wheel installed:
+python3 -m pip install --user --upgrade setuptools wheel
+
+# Now run this command from the same directory where setup.py is located:
+python3 setup.py sdist bdist_wheel
+```
+
+##### Uploading to TestPyPI
+Go to https://test.pypi.org/manage/account/#api-tokens and create a new API token; 
+
+```bash
+# You can use twine to upload the distribution packages. You’ll need to install Twine:
+python3 -m pip install --user --upgrade twine
+
+# Once intalled, run Twine to upload all of the archives under dist:
+python3 -m twine upload --repository testpypi dist/*
+```
+
+
 ### Tools
 #### SQLiteBrowser
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
