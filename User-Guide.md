@@ -1,7 +1,7 @@
 ##### Contents
 1. [[Overview|User-Guide#overview]]
 1. [[Navigation|User-Guide#navigation]]
-1. [[Home ScreenUser-Guide#home-screen]]
+1. [[Home Screen|User-Guide#home-screen]]
 1. [[Viewing Call History|User-Guide#viewing-call-history]]
 1. [[Viewing Calls|User-Guide#viewing-calls]]
 1. [[Managing a Caller|User-Guide#managing-a-caller]]
