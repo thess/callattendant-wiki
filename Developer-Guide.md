@@ -197,6 +197,25 @@ yourself to test the service.
 
 ## Additional Information
 
+### Python
+`twine` requires Python 3.6 or greater. Here's how I upgraded from 3.5.3 to 3.8.5:
+
+```bash
+# Install prerequisites
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
+
+# Download Python
+cd ~/Downloads/
+wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+
+# Install Python (this takes awhile)
+sudo tar zxf Python-3.8.5.tgz
+cd Python-3.8.5
+sudo ./configure --enable-optimizations
+sudo make -j 4
+sudo make altinstall
+```
+
 ### Unit Tests
 `pytest` is used for unit testing. 
 
@@ -214,23 +233,6 @@ python -m pytest ../tests
 ```
 
 ### Tools
-#### Python
-`twine` requires Python 3.6 or greater. Here's how I upgraded from 3.5.3 to 3.8.5:
-```bash
-# Install prerequisites
-sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
-
-# Download Python
-cd ~/Downloads/
-wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
-
-# Install Python
-sudo tar zxf Python-3.8.5.tgz
-cd Python-3.8.5
-sudo ./configure --enable-optimizations
-sudo make -j 4
-sudo make altinstall
-
 #### SQLiteBrowser
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
 ```bash
@@ -238,18 +240,13 @@ sudo apt-get install sqlitebrowser
 sqlitebrowser callattendant.db
 ```
 
-### US Robotics 5637 Modem
-- See IoT Bytes [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
+### US Robotics 5637 Modem Resources
 - [US Robotics 5637 User Guide](https://support.usr.com/support/5637/5637-ug/ref_cmd_use.html)
+- [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
 
-### More information
-The Call Attendant project was inspired by the [pamapa/callblocker](https://github.com/pamapa/callblocker) project,
-an excellent Raspberry Pi based call blocker.  However, the __callattendant__ differs from the __callblocker__ in that adds
-voice messaging; and the __callattendant__ is written entirely in Python, uses SQLite for the call logging, and
-implments the web interface with Flask.
-
-The following blogs from [IoT Bytes by Pradeep Singh](https://iotbytes.wordpress.com/) were very useful for learning to how
-to program the Raspberry Pi and the US Robotics 5637 modem. His blog site has many Raspberry Pi resources. Thanks Pradeep!
+The following blogs from [IoT Bytes by Pradeep Singh](https://iotbytes.wordpress.com/) were very useful 
+for learning to how to program the Raspberry Pi and the US Robotics 5637 modem. His blog site has many 
+Raspberry Pi resources. Thanks Pradeep!
 
 - [Incoming Call Details Logger with Raspberry Pi](https://iotbytes.wordpress.com/incoming-call-details-logger-with-raspberry-pi/)
 - [Play Audio File on Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/play-audio-file-on-phone-line-with-raspberry-pi/)
