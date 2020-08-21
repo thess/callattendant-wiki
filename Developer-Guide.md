@@ -214,6 +214,24 @@ python -m pytest ../tests
 ```
 
 ### Tools
+#### Python
+`twine` requires Python 3.6 or greater. Here's how I upgraded from 3.5.3 to 3.8.5:
+```bash
+# Install prerequisites
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
+
+# Download Python
+cd ~/Downloads/
+wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+
+# Install Python
+sudo tar zxf Python-3.8.5.tgz
+cd Python-3.8.5
+sudo ./configure --enable-optimizations
+sudo make -j 4
+sudo make altinstall
+
+#### SQLiteBrowser
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
 ```bash
 sudo apt-get install sqlitebrowser
