@@ -11,7 +11,7 @@ cd /lib/systemd/system/
 sudo nano callattendant.service
 ```
 
-Copy the following text into the `callattendant.service` unit file:
+Copy the following text into the `callattendant.service` unit file; edit the paths as necessary for your system:
 
 ```text
 [Unit]
@@ -20,12 +20,13 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 -u /home/pi/callattendant/src/callattendant.py
-WorkingDirectory=/home/pi/callattendant/src
+ExecStart=/usr/bin/python3 -u /home/pi/callattendant/callattendant --config app.cfg
+WorkingDirectory=/home/pi/callattendant/callattendant
 Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 You can check more on service's options in the next wiki: https://wiki.archlinux.org/index.php/systemd.
 
@@ -42,6 +43,9 @@ sudo systemctl start callattendant.service
 
 ### Service Tasks
 For every change that we do on the `/lib/systemd/system` folder we need to execute a `daemon-reload` (third line of previous code). Execute the following commands as needed to check the status, start and stop the service, or check the logs.
+```bash
+sudo systemctl daemon-reload
+```
 
 #### Check status
 `sudo systemctl status callattendant.service`
