@@ -232,7 +232,8 @@ cd ~/callattendant/callattendant
 python -m pytest ../tests
 ```
 
-### PyPI
+### Packaging Python Projects
+Excerpts from https://packaging.python.org/tutorials/packaging-projects/
 
 ```bash
 # Make sure you have the latest versions of setuptools and wheel installed:
@@ -253,7 +254,11 @@ python3 -m pip install --user --upgrade twine
 python3 -m twine upload --repository testpypi dist/*
 ```
 
-
+##### Installing your newly uploaded package
+You can use pip to install your package and verify that it works. Create a new virtualenv (see Installing Packages for detailed instructions) and install your package from TestPyPI:
+```bash
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
+```
 ### Tools
 #### SQLiteBrowser
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
