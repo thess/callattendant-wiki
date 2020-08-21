@@ -197,6 +197,22 @@ yourself to test the service.
 
 ## Additional Information
 
+### Unit Tests
+`pytest` is used for unit testing. 
+
+```bash
+# Install
+pip3 install pytest
+```
+
+```bash
+# Run from the top-level package 
+cd ~/callattendant/callattendant
+
+# Runnning "python -m pytest ..." adds the current directory to the sys.path
+python -m pytest ../tests
+```
+
 ### Tools
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
 ```bash
