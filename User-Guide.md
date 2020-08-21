@@ -1,13 +1,14 @@
 ##### Contents
-1. Overview
-1. Navigation
-1. Home | Dashboard
-1. Call Log | Call History
-1. Viewing a Call
-1. Managing a Caller
-1. Managing Voice Messages
-1. Managing the Permitted Numbers
-1. Managing the Blocked Numbers
+1. [[Overview|User-Guide#overview]]
+1. [[Navigation|User-Guide#navigation]]
+1. [[Home ScreenUser-Guide#home-screen]]
+1. [[Viewing Call History|User-Guide#viewing-call-history]]
+1. [[Viewing Calls|User-Guide#viewing-calls]]
+1. [[Managing a Caller|User-Guide#managing-a-caller]]
+1. [[Managing Voice Messages|User-Guide#managing-voice-messages]]
+1. [[Managing Permitted Numbers|User-Guide#managing-permitted-numbers]]
+1. [[Managing Blocked Numbers|User-Guide#managing-blocked-numbers]]
+
 
 ***
 ## Overview
@@ -57,12 +58,13 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 
 ***
 
-## Dashboard | Home
+## Home Screen
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
 ##### _Dashboard | Home page on IPad_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
-The Dashboard is the home page for the application.
+The Dashboard is the home page for the application. This screen provides metrics and convenient 
+access to the last 10 calls.
 
 ---
 #### Statistics
@@ -109,10 +111,10 @@ This list shows the top permitted and screened callers (aka allowed callers) sin
 This list shows the top blocked callers (aka denied callers) since the application was installed.
 
 ***
-## The Call Log | Call History
+## Viewing Call History
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
 
-The _Call Log_ is the main screen. It can be viewed by selecting _Calls_ from the main menu. 
+The _Call Log_ shows your entire call history. It can be viewed by selecting _Calls_ from the main menu. 
 It lists all the calls that have been screened by the __callattendant__.
 The _Action_ column shows how the __callattendant__ handled the call.
 Clicking on a caller will take you to the [[Manage Caller|User-Guide#managing-callers]] page where you can manage the caller's
