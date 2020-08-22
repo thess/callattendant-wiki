@@ -57,7 +57,7 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 * **Blocked** displays the page for managing the membership in the Blocked Numbers list.
 * **Messages** displays the page for playing and managing voice messages left by callers.
 * **Help** displays this Wiki User Guide.
-* **Search** displays the call history for the given phone number.
+* **Search** displays the call history for a given phone number.
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
