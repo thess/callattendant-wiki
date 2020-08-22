@@ -65,7 +65,7 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 
 ## Home Screen
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
-##### _Dashboard | Home page on IPad_
+##### _Dashboard | Home Page on IPad_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
 The Dashboard is the home page for the application. This screen provides metrics and convenient 
