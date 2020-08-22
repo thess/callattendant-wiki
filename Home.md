@@ -27,10 +27,10 @@ The Call Attendant (__callattendant__) is a python-based, automated call attenda
 This section describes how to install the hardware and the software.
 
 ### Hardware
-* The USR5637 Modem is connect to your Raspberry Pi via USB
-* Your home phone system is connected to the USR5637 Modem via the RJ11 connection to a wall jack,
+* The USR5637 Modem is connect to your Raspberry Pi via USB.
+* Your home phone land-line system is connected to the USR5637 Modem via the RJ11 connection to a wall jack,
 or to a splitter connected to a wall jack and shared with a phone, or a splitter connected to your Telco modem
-and shared with the house phone wiring.
+and shared with the land-line phone wiring.
 * Your Raspberry Pi is connected to your home network via wireless or an RJ45 network connection.
 
 ##### Schematic
@@ -44,7 +44,7 @@ _TODO: Raspberry PI LED connections_
 1. [Download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or choose a
 [specific release](https://github.com/emxsys/callattendant/releases).
 2. Unzip the downloaded version. The unzipped folder will be named `callattendant-master` or 
-`callattendant-<version>` depending on what you downloaded. Here's how unzip it into your home folder, 
+`callattendant-<version>` depending on what you downloaded. Here's how to unzip it into your home folder 
 using the latest version (_master_) in the example:
 ```bash
 cd
@@ -55,7 +55,7 @@ You can rename the `callattendant-<version>` folder if you wish.
 
 #### Step 2. Install Dependencies
 
-We've provided a requirements file called `requirements.txt`. Let's use it to
+A requirements file called `requirements.txt`is provided to help 
 install the required packages. But first, navigate to the folder where the 
 callattendant repository was placed, e.g., `/pi/home/callattendant`.
 
@@ -74,16 +74,16 @@ To override the default configuration, copy the `src/app.example` file to a new 
 Use an editor that provides Python syntax highlighting, like `nano`.  Then use your configuration file when starting the 
 __callattendant__. See [[Starting the Call Attendant|User-Guide#starting-the-call-attendant]] for an example.
 
-Following are select configuration elements that may be of interest, the default values are shown:
+The following are select configuration elements that may be of interest. The default values are shown.
 
 ##### Block Enabled
 Set to False to disable call blocking (for whatever reason)
 ```python
-# BLOCK_ENABLED: if True calls that fail screening will be blocked
+# BLOCK_ENABLED: if set to True, calls that fail screening will be blocked
 BLOCK_ENABLED = True
 ```
-##### Screening mode
-Determines whether the permitted (whitelist) and blocked (blacklist) number lists are processed.
+##### Screening Mode
+Determines whether the permitted (whitelist) and blocked (blacklist) number lists are processed:
 ```python
 # SCREENING_MODE: A tuple containing: "whitelist" and/or "blacklist", or empty
 SCREENING_MODE = ("whitelist", "blacklist")
@@ -106,7 +106,7 @@ BLOCK_NUMBER_PATTERNS = {}
 Determines what action is taken for a blocked caller:
 ```python
 # BLOCKED_ACTIONS: A tuple containing a combination of the following actions:
-#   "greeting", "record_message", "voice_mail".
+#   "greeting", "record_message", "voice_mail"
 # Example: No actions, just hang_up
 #   BLOCKED_ACTIONS = ()
 # Example: Play an announcement before hanging up
@@ -122,11 +122,11 @@ Determines what action is taken for a blocked caller:
 #
 BLOCKED_ACTIONS = ("greeting", "voice_mail")
 ```
-##### Audio WAV files
+##### Audio WAV Files
 Various audio wav files may be played to the caller. You can record your own
 and specify them with these settings:
 ```python
-# BLOCKED_GREETING_FILE: The wav file to be played to blocked callers.
+# BLOCKED_GREETING_FILE: The wav file to be played to blocked callers
 #   Example: "We're sorry, this call has been blocked by the Raspberry Pi
 #           call attendant. To be unblocked, leave a message with your
 #           justification to be unblocked."
@@ -141,10 +141,10 @@ VOICE_MAIL_GREETING_FILE = "resources/general_greeting.wav"
 VOICE_MAIL_GOODBYE_FILE = "resources/goodbye.wav"
 
 # VOICE_MAIL_INVALID_RESPONSE_FILE: The wav file played on an invalid keypress
-#   Example: "That was an invalid response.."
+#   Example: "That was an invalid response..."
 VOICE_MAIL_INVALID_RESPONSE_FILE = "resources/invalid_response.wav"
 
-# VOICE_MAIL_LEAVE_MESSAGE_FILE: The wav file played be before recording a message
+# VOICE_MAIL_LEAVE_MESSAGE_FILE: The wav file played before recording a message
 #   Example: "Please leave a message"
 VOICE_MAIL_LEAVE_MESSAGE_FILE = "resources/please_leave_message.wav"
 
