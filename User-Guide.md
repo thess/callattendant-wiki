@@ -33,10 +33,10 @@ Following is an example of the home page you will see:
 ##### _Home page examples on an IPad Pro and Pixel2 phone_
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
 
-The __callattendant__'s web interface uses a responsive design: you can review your calls and messages on your phone,
+The __callattendant__'s web interface uses a responsive design,meaning you can review your calls and messages on your cell phone,
 tablet or computer.
 
-You can view the web interface from any phone or computer that's on
+You can view the web interface from any cell phone or computer that's on
 the same network as the Pi.
 
 ###### _[[Back to Contents|User-Guide#contents]]_
@@ -56,8 +56,8 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 * **Permitted** displays the page for managing the membership in the Permitted Numbers list.
 * **Blocked** displays the page for managing the membership in the Blocked Numbers list.
 * **Messages** displays the page for playing and managing voice messages left by callers.
-* **Help** displays this Wiki User Guide
-* **Search** displays the call history for the given phone number
+* **Help** displays this Wiki User Guide.
+* **Search** displays the call history for the given phone number.
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -69,15 +69,15 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 ![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
 
 The Dashboard is the home page for the application. This screen provides metrics and convenient 
-access to the last 10 calls.
+access to the last 10 calls received.
 
 ---
 #### Statistics
 ![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-statistics.png)
 
 Here we have some overall statistics since the Call Attendant was installed.
-* **Calls processed** is the overall number of calls received. This is also a link to the Call Log.
-* **Calls blocked** is the number of calls blocked by the Call Attendant.
+* **Calls Processed** is the overall number of calls received. This is also a link to the Call Log.
+* **Calls Blocked** is the number of calls blocked by the Call Attendant.
 * **Percent Blocked** is the percentage of calls that were blocked. This is also a link to the Calls per Day graph.
 
 ---
@@ -94,7 +94,7 @@ will take you to the Messages page.
 This section shows you the last 10 calls received.
 
 * The Phone Numbers in the Caller column are links to the View Call page, where you can get all the details about the call.
-* The Actions column shows you what action was taken by the Call Attendant, include whether a voice message was recorded, and whether it has been played or not.
+* The Actions column shows you what action was taken by the Call Attendant, include whether a voice message was recorded, and whether the message has been played or not.
 * The color of the rows indicates whether the caller is currently in the Permitted Numbers list (green) or Blocked Numbers list (red).
 
 ---
@@ -123,7 +123,7 @@ This list shows the top blocked callers (aka denied callers) since the applicati
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls`
 
 The _Call Log_ shows your entire call history. It can be viewed by selecting _Calls_ from the main menu. 
-It lists all the calls that have been screened by the __callattendant__.
+It lists all the calls that have been received by the __callattendant__.
 The _Action_ column shows how the __callattendant__ handled the call.
 Clicking on a caller will take you to the [[Manage Caller|User-Guide#managing-callers]] page where you can manage the caller's
 membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and/or 
@@ -133,7 +133,7 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 - __Blocked__: the caller is in the _Blocked Numbers_ list or was found to be a robocaller or other nuisance. The call was blocked.
 - __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
 
-##### _Call Log example_
+##### _Call Log Example_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
@@ -142,7 +142,7 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 ## Viewing Calls
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls/view/<call-number>`
 
-##### _Viewing Call example on phone_
+##### _Viewing Call Example On Phone_
 ![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/view-call-pixel2.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
@@ -166,7 +166,7 @@ a caller on the [[Call Log|User-Guide#the-call-log]] page.
 
 ## Managing Voice Messages
 ### URL: `http://<pi-address>|<pi-hostname>:5000/messages`
-The _Messages_ page is where you listen to and/or delete voices messages left by blocked callers.
+The _Messages_ page is where you listen to and/or delete voices messages left by callers.
 This page is accessed by selecting _Messages_ from the main menu.
 ##### _Messages example_
 ![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages-ipad.png)
@@ -179,7 +179,7 @@ This page is accessed by selecting _Messages_ from the main menu.
 ### URL: `http://<pi-address>|<pi-hostname>:5000/permitted`
 The  _Permitted Numbers_ page is where you view the permitted numbers.
 This page is accessed by selecting _Permitted_ from the main menu.
-##### _Permitted Numbers example_
+##### _Permitted Numbers Example_
 ![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
@@ -190,7 +190,7 @@ This page is accessed by selecting _Permitted_ from the main menu.
 ### URL: `http://<pi-address>|<pi-hostname>:5000/blocked`
 The  _Blocked Numbers_ page is where you view the blocked numbers.
 This page is accessed by selecting _Blocked_ from the main menu.
-##### _Blocked Numbers example_
+##### _Blocked Numbers Example_
 ![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
