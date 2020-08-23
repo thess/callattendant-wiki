@@ -61,6 +61,7 @@ sudo systemctl daemon-reload
 
 ### REFERENCES
 - https://wiki.archlinux.org/index.php/systemd
+- https://stackoverflow.com/questions/37211115/how-to-enable-a-virtualenv-in-a-systemd-service-unit
 - http://www.diegoacuna.me/how-to-run-a-script-as-a-service-in-raspberry-pi-raspbian-jessie/
 - https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
 - https://coreos.com/os/docs/latest/getting-started-with-systemd.html
