@@ -3,8 +3,8 @@
 #### Contents
 1. [[Overview|home#overview]]
 2. [[Installation|home#installation]]
-3. [[Configuration|home#configuration]]
-4. [[Operation|home#operation]]
+3. [[Operation|home#operation]]
+4. [[Configuration|home#configuration]]
 
 #### Other pages
 * [[User Guide|User-Guide]]
@@ -41,43 +41,146 @@ and shared with the land-line phone wiring.
 ##### Schematic
 ![Hardware Connections](https://github.com/emxsys/callattendant/blob/master/docs/images/Deployment_View.png)
 
-_TODO: Raspberry PI LED connections_
 
 ### Software
 
-#### Step 1. Download
-1. [Download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or choose a
-[specific release](https://github.com/emxsys/callattendant/releases).
-2. Unzip the downloaded version. The unzipped folder will be named `callattendant-master` or 
-`callattendant-<version>` depending on what you downloaded. Here's how to unzip it into your home folder 
-using the latest version (_master_) in the example:
+The installation calls for Python3.X.
+
+#### Setup a Virtual Environment
+###### _Optional_
+A virtual environment is useful if your Raspberry Pi is being shared with other functions, like the [Pi-hole](https://pi-hole.net/) add blocker. A virtual environment allows you isolate the run-time environment from other programs. If your Raspberry Pi is dedicated to the __callattendant__ then this step is not necessary.
+
+The following instructions create and activate a virtual environment named _venv_ within the current folder. 
 ```bash
-cd
-unzip ~/Downloads/callattendant-master.zip 
-cd callattendant-master
+# Intall - if necessary
+sudo apt install virtualenv
+
+# Create the virtual environment
+virtualenv venv --python=python3
+
+# Activate it
+source venv/bin/activate
 ```
-You can rename the `callattendant-<version>` folder if you wish.
-
-#### Step 2. Install Dependencies
-
-A requirements file called `requirements.txt`is provided to help 
-install the required packages. But first, navigate to the folder where the 
-callattendant repository was placed, e.g., `/pi/home/callattendant`.
-
+Now you're operating with a virtual Python. To check, issue the `which` command and ensure the output points to your virtual environment; and also check the Python version:
 ```bash
-$ pip3 install -r requirements.txt
+$ which python
+/home/pi/venv/bin/python
+
+$ python --version
+Python 3.7.3
+```
+Later, when you install the __callattendant__ software, it will be placed within the virtual environment
+folder (under `lib/python3.x/site-packages` to be exact). The virtual environment, when activated, alters
+your _PATH_ so that the system looks for python and its packages within this folder hierarchy. 
+
+#### Install the Software
+The software is available on [PyPI](https://pypi.org/project/callattendant/). Install and update using `pip`:
+```bash
+# Using the virtual environment you use "pip" to install the software
+pip install callattendant
+
+# You must use "pip3" on the Pi if your not using a virtual environment
+pip3 install callattendant
 ```
 
-#### Step 3. If Updating 
+If your not using the virtual environment, you may need to reboot or logoff/login to update the
+`$PATH` for your profile in order to find and use the `callattendant` command.
 
-If you are updating from a previous release, you should copy/move the `callattendant.db` file from the previous release to  `data/callattendant.db` in the new release.
+***
+
+## Operation
+
+The __callattendant__ software includes a `callattendant` command to start the system. Run this command
+the first time with the `--create-folder` option to create the initial data and files in the default
+data folder: `~/.callattendant`. This is a hidden folder off the root of your home directory. You
+can override this location with the `--data-path` option.
+
+Command line options:
+```
+Usage: callattendant --config [FILE] --data-path [FOLDER]
+Options:
+-c, --config [FILE]       load a python configuration file
+-d, --data-path [FOLDER]  path to data and configuration files
+-f, --create-folder       create the data-path folder if it does not exist
+-h, --help                displays this help text
+```
+Here are some examples of the `callattendant` command to start the system:
+```bash
+# Creating the default data folder with the default configuration
+callattendant --create-folder
+
+# Using the default configuration
+callattendant
+
+# Using the configuration file named `app.cfg` in the default location
+callattendant --config app.cfg
+
+# Using a customized config file in an alternate, existing location
+callattendant --config myapp.cfg --data-path /var/lib/callattendant
+```
+
+After starting the system, you should see output of the form:
+```
+[Configuration]
+  BLOCKED_ACTIONS = ('greeting',)
+  BLOCKED_GREETING_FILE = resources/blocked_greeting.wav
+  BLOCKED_RINGS_BEFORE_ANSWER = 0
+  BLOCK_ENABLED = True
+  BLOCK_NAME_PATTERNS = {'V[0-9]{15}': 'Telemarketer Caller ID'}
+  BLOCK_NUMBER_PATTERNS = {}
+  DATABASE = data/callattendant.db
+  DEBUG = False
+  ENV = production
+  PERMITTED_ACTIONS = ()
+  PERMITTED_GREETING_FILE = resources/general_greeting.wav
+  PERMITTED_RINGS_BEFORE_ANSWER = 4
+  ROOT_PATH = /home/pi/src/callattendant/callattendant
+  SCREENED_ACTIONS = ('greeting', 'record_message')
+  SCREENED_GREETING_FILE = resources/general_greeting.wav
+  SCREENED_RINGS_BEFORE_ANSWER = 0
+  SCREENING_MODE = ('whitelist', 'blacklist')
+  TESTING = False
+  VOICE_MAIL_GOODBYE_FILE = resources/goodbye.wav
+  VOICE_MAIL_GREETING_FILE = resources/general_greeting.wav
+  VOICE_MAIL_INVALID_RESPONSE_FILE = resources/invalid_response.wav
+  VOICE_MAIL_LEAVE_MESSAGE_FILE = resources/please_leave_message.wav
+  VOICE_MAIL_MENU_FILE = resources/voice_mail_menu.wav
+  VOICE_MAIL_MESSAGE_FOLDER = data/messages
+{MSG LED OFF}
+Staring the Flask webapp
+Running Flask webapp
+ * Serving Flask app "userinterface.webapp" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Modem COM Port is: /dev/ttyACM0
+```
+
+Make a few calls to yourself to test the service. The standard output will show the
+progress of the calls. Then navigate to `http://<pi-address>|<pi-hostname>:5000` in a
+web browser to checkout the web interface.
+
+Press `ctrl-c` a couple of times to exit the system
+
+### Web Interface
+#### URL: `http://<pi-address>|<pi-hostname>:5000`
+To view the web interface, simply point your web browser to port `5000` on your Raspberry Pi.
+For example, in your Raspberry Pi's browser, you can use:
+```
+http://localhost:5000/
+```
+See the [[User Guide|User-Guide]] for detailed instructions on the web interface.
 
 ***
 
 ## Configuration
-To override the default configuration, copy the `src/app.example` file to a new file, e.g. `src/app.cfg` and edit its contents.
-Use an editor that provides Python syntax highlighting, like `nano`.  Then use your configuration file when starting the 
-__callattendant__. See [[Starting the Call Attendant|User-Guide#starting-the-call-attendant]] for an example.
+You can review the current configuration by navigating to the _Settings_ page by clicking on the "gear" icon in the main menu.
+#### URL: `http://<pi-address>|<pi-hostname>:5000/settings`
+
+To override the default configuration, edit the `app.cfg` file found in the default location (`~/.callattendant`).
+Use an editor that provides Python syntax highlighting, like `nano`.  Then specify your configuration file when starting the 
+__callattendant__. See the preceding [[Operation|home#operation]] for an example.
 
 The following are select configuration elements that may be of interest. The default values are shown.
 
@@ -158,25 +261,5 @@ VOICE_MAIL_LEAVE_MESSAGE_FILE = "resources/please_leave_message.wav"
 VOICE_MAIL_MENU_FILE = "resources/voice_mail_menu.wav"
 ```
 
-***
-
-## Operation
-### Starting the Call Attendant
-To start the system, run the Python 3 `callantendant.py` program with an optional configuration file. 
-Here are a couple of examples assuming you installed the __callattendant__ under the home folder on your
-Raspberry Pi:
-
-##### _Using the default configuration_
-```bash
-cd ~
-cd callattendant<-version>
-python3 src/callattendant.py
-```
-##### _Using a configuration file named app.cfg_
-```bash
-cd ~
-cd callattendant<-version> 
-python3 src/callattendant.py --config app.cfg
-```
 
 
