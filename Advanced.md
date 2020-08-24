@@ -4,15 +4,20 @@ We're going to define a service to automatically run the Call Attendant on the R
 ### Create the Service
 
 ####  Step 1. Create the Unit File
-The service definition must be on the `/lib/systemd/system` folder. Our service is going to be called "callattendant.service":
+The service definition unit file must be on the `/lib/systemd/system` folder. Our service is going to be called "callattendant.service".
 
-```Shell
-cd /lib/systemd/system/
-sudo nano callattendant.service
+But first, we must identify the path to the `callattendant` command. Use the `which` command to locate the `callattendant` script. Note the path, we'll use it later in the unit file.
+```bash
+which callattendant
+/home/pi/.local/bin/callattendant
 ```
 
-Copy the following text into the `callattendant.service` unit file; edit the paths as necessary for your system
+Now create the unit file using the `nano` editor:
+```bash
+sudo nano /lib/systemd/system/callattendant.service
+```
 
+Copy the following text into the `callattendant.service` unit file; edit the paths as necessary for your system using path identified earlier. _You can use `Ctl-Shift-V` or `Right-Click > Paste` to paste this text into the nano editor._
 ```text
 [Unit]
 Description=Call Attendant
