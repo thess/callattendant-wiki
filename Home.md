@@ -48,7 +48,7 @@ The installation calls for Python3.X.
 
 #### Setup a Virtual Environment
 ###### _Optional_
-A virtual environment is useful if your Raspberry Pi is being shared with other functions, like the [Pi-hole](https://pi-hole.net/) add blocker. A virtual environment allows you isolate the run-time environment from other programs. If your Raspberry Pi is dedicated to the __callattendant__ then this step is not necessary.
+A virtual environment is useful if your Raspberry Pi is being shared with other functions, like the [Pi-hole](https://pi-hole.net/) add blocker. A virtual environment allows you isolate the Python run-time environment from other programs. If your Raspberry Pi is dedicated to the __callattendant__ then this step is not necessary.
 
 The following instructions create and activate a virtual environment named _venv_ within the current folder. 
 ```bash
