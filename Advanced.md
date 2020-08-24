@@ -11,7 +11,7 @@ cd /lib/systemd/system/
 sudo nano callattendant.service
 ```
 
-Copy the following text into the `callattendant.service` unit file; edit the paths as necessary for your system:
+Copy the following text into the `callattendant.service` unit file; edit the paths as necessary for your system
 
 ```text
 [Unit]
@@ -20,14 +20,16 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 -u /home/pi/callattendant/callattendant --config app.cfg
-WorkingDirectory=/home/pi/callattendant/callattendant
+ExecStart=/home/pi/.local/bin/callattendant --config app.cfg
+Environment="PYTHONUNBUFFERED='True'"
+WorkingDirectory=/home/pi/.callattendant
+User=pi
 Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
-
 ```
+
 You can check more on service's options in the next wiki: https://wiki.archlinux.org/index.php/systemd.
 
 #### Step 2. Activate the Service
