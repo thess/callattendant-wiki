@@ -36,30 +36,58 @@ You can check more on service's options in the next wiki: https://wiki.archlinux
 Now that we have our service we need to activate it:
 
 ```Shell
+# Change the permissions on the service file to read/write
 sudo chmod 644 /lib/systemd/system/callattendant.service
-chmod +x /home/pi/callattendant/src/callattendant.py
+
+# Reload the unit files
 sudo systemctl daemon-reload
+
+# Enable the service...
 sudo systemctl enable callattendant.service
+
+# And now run the service
 sudo systemctl start callattendant.service
 ```
 
 ### Service Tasks
 For every change that we do on the `/lib/systemd/system` folder we need to execute a `daemon-reload` (third line of previous code). Execute the following commands as needed to check the status, start and stop the service, or check the logs.
 ```bash
+# Reload the unit file(s)
 sudo systemctl daemon-reload
 ```
 
-#### Check status
-`sudo systemctl status callattendant.service`
-
 #### Start service
-`sudo systemctl start callattendant.service`
+```bash
+# Use the supplied command script
+start-callattendant
+
+# or use the system command
+sudo systemctl start callattendant.service
+```
+
 
 #### Stop service
-`sudo systemctl stop callattendant.service`
+```bash
+# Use the supplied command script
+stop-callattendant
+
+# or use the system command
+sudo systemctl stop callattendant.service
+```
 
 #### Check/Monitor service's log
-`sudo journalctl -f -u callattendant.service`
+```bash
+# Use the supplied command script
+monitor-callattendant
+
+# or use the system command
+sudo journalctl -f -u callattendant.service
+```
+
+#### Check status
+```bash
+sudo systemctl status callattendant.service
+```
 
 ### REFERENCES
 - https://wiki.archlinux.org/index.php/systemd
