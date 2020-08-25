@@ -1,10 +1,119 @@
 # Call Attendant Developer Guide
 ##### Contents
+1. [[Software Project Setup|Developer-Guide#software-project-setup]]
 1. [[Software Architecture|Developer-Guide#software-architecture]]
-2. [[Software Development Plan|Developer-Guide#Software-Development-Plan]]
-3. [[Software Project Setup|Developer-Guide#software-project-setup]]
-4. [[Additional Information|Developer-Guide#additional-information]]
+1. [[Software Development Plan|Developer-Guide#Software-Development-Plan]]
+1. [[Additional Information|Developer-Guide#additional-information]]
 
+***
+
+## Software Project Setup
+### Clone (or download) the Repository
+
+You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`.
+You can either clone this repository, or [download a zip file](https://github.com/emxsys/callattendant/archive/master.zip),
+or download a specific release from [Releases](https://github.com/emxsys/callattendant/releases).
+
+##### Clone with Git
+
+Here's how clone the repository with `git` into your home folder:
+
+Using HTTPS
+```bash
+cd 
+git clone https://github.com/emxsys/callattendant.git
+cd callattendant
+```
+
+Using SSH (see [GitHub: About SSH](https://docs.github.com/en/github/authenticating-to-github/about-ssh))
+```bash
+cd 
+git clone git@github.com:emxsys/callattendant.git
+cd callattendant
+```
+##### Download Zip
+
+If you [download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or a
+specific release, the unzpped folder will be named `callattendant-master` or `callattendant-<release_tag>` 
+depending on what you downloaded. You can rename it if you wish. Here's how unzip it into your home folder.
+
+```bash
+cd
+unzip ~/Downloads/callattendant-master.zip 
+cd callattendant-master
+```
+
+### Establish the Development Environment
+
+The installation calls for Python3.x. 
+
+#### Setup Virtual Environment
+
+The following instructions create and activate a virtual environment named venv within the current folder:
+
+```bash
+# Install virtualenv - if not installed
+sudo apt install virtualenv
+
+# Create the virtual environment
+virtualenv venv --python=python3
+
+# Activate it
+source venv/bin/activate
+```
+
+Now you're operating with a virtual Python. To check, issue the which command and ensure the output points to your virtual environment; and also check the Python version:
+```bash
+which python
+# /home/pi/venv/bin/python
+
+python --version
+# Python 3.7.3
+```
+
+#### Install Packages
+
+We've provided a requirements file called `requirements.txt`. Let's use it to
+install the required packages. But first, navigate to the folder where the 
+callattendant repository was placed, e.g., `/pi/home/callattendant`.
+
+For the virtual environment:
+```bash
+$ pip install -r requirements.txt
+```
+
+In my install, lxml took a long time to build (because Raspberry Pi) but it's
+worth the wait to get to that part of blocking spam calls. So chill and do
+whatever it is you do while software builds.
+
+### Initialization
+
+In the project directory, issue the following command:
+
+```bash
+python callattendant
+```
+
+You should see output of the form:
+
+```
+(python3) pi@raspberrypi:~/testing/callattendant/src $ python callattendant.py
+CallLogger initialized
+Blacklist initialized
+Whitelist initialized
+Modem COM Port is: /dev/ttyACM0
+ * Serving Flask app "userinterface.webapp" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+```
+
+Navigate to <pi_address> on port 5000 and you should 
+see the Call Attendant web interface home page. Make a few calls to
+yourself to test the service.
 ***
 
 ## Software Architecture
@@ -53,153 +162,6 @@ The development plan's [phase objectives](https://github.com/emxsys/callattendan
 - [ ] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+0.5%22)
 ### [Transition Phase](https://github.com/emxsys/callattendant/projects/4)
 - [ ] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+1.0%22)
-
-***
-
-## Software Project Setup
-### Clone (or download) the Repository
-
-You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`.
-You can either clone this repository, or [download a zip file](https://github.com/emxsys/callattendant/archive/master.zip),
-or download a specific release from [Releases](https://github.com/emxsys/callattendant/releases).
-
-##### Clone with Git
-
-Here's how clone the repository with `git` into your home folder:
-
-Using HTTPS
-```bash
-cd 
-git clone https://github.com/emxsys/callattendant.git
-cd callattendant
-```
-
-Using SSH (see [GitHub: About SSH](https://docs.github.com/en/github/authenticating-to-github/about-ssh))
-```bash
-cd 
-git clone git@github.com:emxsys/callattendant.git
-cd callattendant
-```
-##### Download Zip
-
-If you [download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or a
-specific release, the unzpped folder will be named `callattendant-master` or `callattendant-<release_tag>` 
-depending on what you downloaded. You can rename it if you wish. Here's how unzip it into your home folder.
-
-```bash
-cd
-unzip ~/Downloads/callattendant-master.zip 
-cd callattendant-master
-```
-
-### Establish the Development Environment
-
-The installation calls for Python3.x. 
-
-_Note, if you are going to use a virtual environment, you will use the `python` command.
-Whereas, if you use the Python release provided by the Raspberry Pi you will be using
-the `python3` command. If you use the `python` command outside the virtual environment
-you will be running Python2.x_
-
-#### Setup Virtual Environment
-###### *Optional*
-
-For development purposes, you might be best served by setting up a virtual environment.
-If you intend to simply install and run the **callattendant** on a dedicated Raspberry Pi, 
-you can skip this step and proceed with [Install Packages](#install-packages).
-
-The following instructions create a virtual environment named _python3_ within the current
-folder:
-
-```bash
-sudo apt install virtualenv
-
-virtualenv python3 --python=python3
-
-source python3/bin/activate
-```
-
-Now you're operating with a virtual Python. To check, issue the following
-command:
-
-```bash
-
-$ which python
-```
-
-You should see output of the form:
-
-```
-(python3) pi@raspberryi:~/testing $ which python
-/home/pi/testing/python3/bin/python
-```
-
-To make sure you're on 3.x as requested, issue:
-
-```bash
-
-$ python --version
-```
-
-You should see output of the form:
-
-```
-(python3) pi@raspberrypi:~/testing $ python --version
-Python 3.7.3
-```
-
-#### Install Packages
-
-We've provided a requirements file called `requirements.txt`. Let's use it to
-install the required packages. But first, navigate to the folder where the 
-callattendant repository was placed, e.g., `/pi/home/callattendant`.
-
-For the virtual environment:
-```bash
-$ pip install -r requirements.txt
-```
-or for the preinstalled Python version:
-```bash
-$ pip3 install -r requirements.txt
-```
-If you intend to run the __callattendant__ as a service, you'll need to install
-the dependencies as the root user. E.g.,
-```bash
-$ sudo pip3 install -r requirements.txt
-```
-
-In my install, lxml took a long time to build (because Raspberry Pi) but it's
-worth the wait to get to that part of blocking spam calls. So chill and do
-whatever it is you do while software builds.
-
-### Initialization
-
-In the `callattendant/src` directory, issue the following command:
-
-```bash
-python callattendant.py
-```
-
-You should see output of the form:
-
-```
-(python3) pi@raspberrypi:~/testing/callattendant/src $ python callattendant.py
-CallLogger initialized
-Blacklist initialized
-Whitelist initialized
-Modem COM Port is: /dev/ttyACM0
- * Serving Flask app "userinterface.webapp" (lazy loading)
- * Environment: production
-   WARNING: This is a development server. Do not use it in a production deployment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-
-```
-
-Navigate to <pi_address> on port 5000 and you should see the home page. Make a few calls to
-yourself to test the service.
-
 
 ***
 
