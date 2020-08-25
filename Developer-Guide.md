@@ -107,18 +107,46 @@ python callattendant --create-folder
 ```
 You should see output of the form:
 ```
-(python3) pi@raspberrypi:~/testing/callattendant/src $ python callattendant.py
-CallLogger initialized
-Blacklist initialized
-Whitelist initialized
-Modem COM Port is: /dev/ttyACM0
+Command line options:
+  --config=None
+  --data-path=None
+  --create-folder=True
+
+[Configuration]
+  BLOCKED_ACTIONS = ('greeting', 'record_message')
+  BLOCKED_GREETING_FILE = /home/pi/src/callattendant/callattendant/resources/blocked_greeting.wav
+  BLOCKED_RINGS_BEFORE_ANSWER = 0
+  BLOCK_ENABLED = True
+  BLOCK_NAME_PATTERNS = {'V[0-9]{15}': 'Telemarketer Caller ID'}
+  BLOCK_NUMBER_PATTERNS = {}
+  DATABASE = callattendant.db
+  DATA_PATH = /home/pi/.callattendant
+  DB_FILE = /home/pi/.callattendant/callattendant.db
+  DEBUG = False
+  ENV = production
+  PERMITTED_ACTIONS = ()
+  PERMITTED_GREETING_FILE = /home/pi/src/callattendant/callattendant/resources/general_greeting.wav
+  PERMITTED_RINGS_BEFORE_ANSWER = 4
+  ROOT_PATH = /home/pi/src/callattendant/callattendant
+  SCREENED_ACTIONS = ()
+  SCREENED_GREETING_FILE = /home/pi/src/callattendant/callattendant/resources/general_greeting.wav
+  SCREENED_RINGS_BEFORE_ANSWER = 0
+  SCREENING_MODE = ('whitelist', 'blacklist')
+  TESTING = False
+  VOICE_MAIL_GOODBYE_FILE = /home/pi/src/callattendant/callattendant/resources/goodbye.wav
+  VOICE_MAIL_GREETING_FILE = /home/pi/src/callattendant/callattendant/resources/general_greeting.wav
+  VOICE_MAIL_INVALID_RESPONSE_FILE = /home/pi/src/callattendant/callattendant/resources/invalid_response.wav
+  VOICE_MAIL_LEAVE_MESSAGE_FILE = /home/pi/src/callattendant/callattendant/resources/please_leave_message.wav
+  VOICE_MAIL_MENU_FILE = /home/pi/src/callattendant/callattendant/resources/voice_mail_menu.wav
+  VOICE_MAIL_MESSAGE_FOLDER = /home/pi/.callattendant/messages
+{MSG LED OFF}
+Starting the Flask webapp
+Running Flask webapp
  * Serving Flask app "userinterface.webapp" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: off
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
-
 ```
 
 Navigate to <pi_address> on port 5000 and you should see the Call Attendant web interface home page. Make a few calls to yourself to test the service.
