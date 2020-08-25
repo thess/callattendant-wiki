@@ -10,13 +10,14 @@
 ## Software Project Setup
 ### Clone (or download) the Repository
 
-You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`.
+You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`. You can use a different folder if you want (I prefer `/home/pi/src/callattendant`). These instructions use the home folder just to keep them simple.
+
 You can either clone this repository, or [download a zip file](https://github.com/emxsys/callattendant/archive/master.zip),
 or download a specific release from [Releases](https://github.com/emxsys/callattendant/releases).
 
 ##### Clone with Git
 
-Here's how clone the repository with `git` into your home folder:
+Here's how clone the repository with `git` into your home folder. 
 
 Using HTTPS
 ```bash
@@ -155,8 +156,8 @@ Navigate to <pi_address> on port 5000 and you should see the Call Attendant web 
 `pytest` is used for unit testing. 
 
 ```bash
-# Run from the top-level package (your path may be different)
-cd ~/src/callattendant/callattendant
+# Run from the top-level package in your project (your path may be different)
+cd ~/callattendant/callattendant
 
 # Runnning "python -m pytest ..." adds the current directory to the sys.path
 python -m pytest ../tests
@@ -234,9 +235,9 @@ The development plan's [phase objectives](https://github.com/emxsys/callattendan
 ### [Elaboration Phase](https://github.com/emxsys/callattendant/projects/2)
 - [x] Iteration #E1: [v0.2](https://github.com/emxsys/callattendant/releases/tag/v0.2)
 ### [Construction Phase](https://github.com/emxsys/callattendant/projects/3)
-- [x] Iteration #C1: [v0.3](https://github.com/emxsys/callattendant/releases/tag/v0.3)
-- [x] Iteration #C2: [v0.4](https://github.com/emxsys/callattendant/releases/tag/v0.4)
-- [ ] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+0.5%22)
+- [x] Iteration #C1: [v0.3](https://github.com/emxsys/callattendant/releases/tag/v0.3) Alpha
+- [x] Iteration #C2: [v0.4](https://github.com/emxsys/callattendant/releases/tag/v0.4) Beta
+- [x] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/releases/tag/v0.5) Release candidate
 ### [Transition Phase](https://github.com/emxsys/callattendant/projects/4)
 - [ ] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+1.0%22)
 
