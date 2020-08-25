@@ -168,10 +168,10 @@ Excerpts from https://packaging.python.org/tutorials/packaging-projects/
 ##### Build the distribution
 ```bash
 # Make sure you have the latest versions of setuptools and wheel installed:
-python3 -m pip install --user --upgrade setuptools wheel
+python -m pip install --user --upgrade setuptools wheel
 
 # Now run this command from the same directory where setup.py is located:
-python3 setup.py sdist bdist_wheel
+python setup.py sdist bdist_wheel
 ```
 
 ##### Uploading to TestPyPI
@@ -179,16 +179,16 @@ Go to https://test.pypi.org/manage/account/#api-tokens and create a new API toke
 
 ```bash
 # You can use twine to upload the distribution packages. You’ll need to install Twine:
-python3 -m pip install --user --upgrade twine
+python -m pip install --user --upgrade twine
 
 # Once intalled, run Twine to upload all of the archives under dist:
-python3 -m twine upload --repository testpypi dist/*
+python -m twine upload --repository testpypi dist/*
 ```
 
 ##### Installing your newly uploaded package
 You can use pip to install your package and verify that it works. Create a new virtualenv (see Installing Packages for detailed instructions) and install your package from TestPyPI:
 ```bash
-python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
+python -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
 ```
 
 ***
