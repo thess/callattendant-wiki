@@ -114,6 +114,52 @@ Modem COM Port is: /dev/ttyACM0
 Navigate to <pi_address> on port 5000 and you should 
 see the Call Attendant web interface home page. Make a few calls to
 yourself to test the service.
+
+### Unit Tests
+`pytest` is used for unit testing. 
+
+```bash
+# Install
+pip3 install pytest
+```
+
+```bash
+# Run from the top-level package 
+cd ~/callattendant/callattendant
+
+# Runnning "python -m pytest ..." adds the current directory to the sys.path
+python -m pytest ../tests
+```
+
+### Packaging Python Projects
+Excerpts from https://packaging.python.org/tutorials/packaging-projects/
+
+##### Build the distribution
+```bash
+# Make sure you have the latest versions of setuptools and wheel installed:
+python3 -m pip install --user --upgrade setuptools wheel
+
+# Now run this command from the same directory where setup.py is located:
+python3 setup.py sdist bdist_wheel
+```
+
+##### Uploading to TestPyPI
+Go to https://test.pypi.org/manage/account/#api-tokens and create a new API token; 
+
+```bash
+# You can use twine to upload the distribution packages. You’ll need to install Twine:
+python3 -m pip install --user --upgrade twine
+
+# Once intalled, run Twine to upload all of the archives under dist:
+python3 -m twine upload --repository testpypi dist/*
+```
+
+##### Installing your newly uploaded package
+You can use pip to install your package and verify that it works. Create a new virtualenv (see Installing Packages for detailed instructions) and install your package from TestPyPI:
+```bash
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
+```
+
 ***
 
 ## Software Architecture
@@ -167,69 +213,7 @@ The development plan's [phase objectives](https://github.com/emxsys/callattendan
 
 ## Additional Information
 
-### Python
-`twine` requires Python 3.6 or greater. Here's how I upgraded from 3.5.3 to 3.8.5:
 
-```bash
-# Install prerequisites
-sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
-
-# Download Python
-cd ~/Downloads/
-wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
-
-# Install Python (this takes awhile)
-sudo tar zxf Python-3.8.5.tgz
-cd Python-3.8.5
-sudo ./configure --enable-optimizations
-sudo make -j 4
-sudo make altinstall
-```
-
-### Unit Tests
-`pytest` is used for unit testing. 
-
-```bash
-# Install
-pip3 install pytest
-```
-
-```bash
-# Run from the top-level package 
-cd ~/callattendant/callattendant
-
-# Runnning "python -m pytest ..." adds the current directory to the sys.path
-python -m pytest ../tests
-```
-
-### Packaging Python Projects
-Excerpts from https://packaging.python.org/tutorials/packaging-projects/
-
-##### Build the distribution
-```bash
-# Make sure you have the latest versions of setuptools and wheel installed:
-python3 -m pip install --user --upgrade setuptools wheel
-
-# Now run this command from the same directory where setup.py is located:
-python3 setup.py sdist bdist_wheel
-```
-
-##### Uploading to TestPyPI
-Go to https://test.pypi.org/manage/account/#api-tokens and create a new API token; 
-
-```bash
-# You can use twine to upload the distribution packages. You’ll need to install Twine:
-python3 -m pip install --user --upgrade twine
-
-# Once intalled, run Twine to upload all of the archives under dist:
-python3 -m twine upload --repository testpypi dist/*
-```
-
-##### Installing your newly uploaded package
-You can use pip to install your package and verify that it works. Create a new virtualenv (see Installing Packages for detailed instructions) and install your package from TestPyPI:
-```bash
-python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps example-pkg-YOUR-USERNAME-HERE
-```
 ### Tools
 #### SQLiteBrowser
 You can use the SQLiteBrowser to examine and/or modify the __callattendant__ database.
@@ -249,4 +233,25 @@ Raspberry Pi resources. Thanks Pradeep!
 - [Incoming Call Details Logger with Raspberry Pi](https://iotbytes.wordpress.com/incoming-call-details-logger-with-raspberry-pi/)
 - [Play Audio File on Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/play-audio-file-on-phone-line-with-raspberry-pi/)
 - [Record Audio from Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/record-audio-from-phone-line-with-raspberry-pi/)
+
+### Python Upgrade on the Pi
+This information is not really necessary if your using virtual environments, but I keep it here for posterity.
+
+~Here's how I upgraded from 3.5.3 to 3.8.5:~
+
+```bash
+# Install prerequisites
+sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
+
+# Download Python
+cd ~/Downloads/
+wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
+
+# Install Python (this takes awhile)
+sudo tar zxf Python-3.8.5.tgz
+cd Python-3.8.5
+sudo ./configure --enable-optimizations
+sudo make -j 4
+sudo make altinstall
+```
 
