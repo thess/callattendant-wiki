@@ -67,12 +67,19 @@ or download a specific release from [Releases](https://github.com/emxsys/callatt
 
 Here's how clone the repository with `git` into your home folder:
 
+Using HTTPS
 ```bash
 cd 
 git clone https://github.com/emxsys/callattendant.git
 cd callattendant
 ```
 
+Using SSH (see [GitHub: About SSH](https://docs.github.com/en/github/authenticating-to-github/about-ssh))
+```bash
+cd 
+git clone git@github.com:emxsys/callattendant.git
+cd callattendant
+```
 ##### Download Zip
 
 If you [download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or a
