@@ -88,14 +88,24 @@ whatever it is you do while software builds.
 
 ### Initialization
 
-In the project directory, issue the following command:
+There's a `__main__.py` file in the top-level package, so you can start the program using the package name. In the project directory, issue the following command:
 
 ```bash
-python callattendant
+python callattendant --help
+# Usage: callattendant --config [FILE] --data-path [FOLDER]
+# Options:
+# -c, --config [FILE]		 load a python configuration file
+# -d, --data-path [FOLDER]	 path to data and configuration files
+# -f, --create-folder		 create the data-path folder if it does not exist
+# -h, --help			 displays this help text
 ```
 
-You should see output of the form:
+Running the software for the first time requires the creation of a data folder using the `--create-folder` option. The default location is `~/.callattendant`. You can override this location using the `--data-path` option.
 
+```bash
+python callattendant --create-folder
+```
+You should see output of the form:
 ```
 (python3) pi@raspberrypi:~/testing/callattendant/src $ python callattendant.py
 CallLogger initialized
@@ -111,21 +121,14 @@ Modem COM Port is: /dev/ttyACM0
 
 ```
 
-Navigate to <pi_address> on port 5000 and you should 
-see the Call Attendant web interface home page. Make a few calls to
-yourself to test the service.
+Navigate to <pi_address> on port 5000 and you should see the Call Attendant web interface home page. Make a few calls to yourself to test the service.
 
 ### Unit Tests
 `pytest` is used for unit testing. 
 
 ```bash
-# Install
-pip3 install pytest
-```
-
-```bash
-# Run from the top-level package 
-cd ~/callattendant/callattendant
+# Run from the top-level package (your path may be different)
+cd ~/src/callattendant/callattendant
 
 # Runnning "python -m pytest ..." adds the current directory to the sys.path
 python -m pytest ../tests
