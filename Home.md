@@ -63,11 +63,11 @@ source venv/bin/activate
 ```
 Now you're operating with a virtual Python. To check, issue the `which` command and ensure the output points to your virtual environment; and also check the Python version:
 ```bash
-$ which python
-/home/pi/venv/bin/python
+which python
+# /home/pi/venv/bin/python
 
-$ python --version
-Python 3.7.3
+python --version
+# Python 3.7.3
 ```
 Later, when you install the __callattendant__ software, it will be placed within the virtual environment
 folder (under `lib/python3.x/site-packages` to be exact). The virtual environment, when activated, alters
@@ -79,7 +79,7 @@ The software is available on [PyPI](https://pypi.org/project/callattendant/). In
 # Using the virtual environment you use "pip" to install the software
 pip install callattendant
 
-# You must use "pip3" on the Pi if your not using a virtual environment
+# However, if your not using the virtual environment, you must use "pip3" on the Pi
 pip3 install callattendant
 ```
 
