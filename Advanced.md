@@ -113,6 +113,8 @@ sudo systemctl status callattendant.service
 ## LED Indicators
 I built a custom Raspberry Pi HAT to show the __callattendant__'s status with several LEDs. 
 
+![prototype](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat-prototype.jpg)
+
 - A blinking orange LED indicates an incoming call
 - A blinking green LED indicates a permitted/approved caller: _Get up and answer the phone._
 - A blinking red LED indicates a blocked/denied caller: _Stay seated._
