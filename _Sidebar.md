@@ -19,5 +19,5 @@
    1. [[Additional Information|Developer-Guide#additional-information]]
 1. [[Advanced|Advanced]]
     1. [[Run as a Service|Advanced#run-as-a-service]]
-    1  [[LED Indicators|Advanced#led-indicators]]
+    1. [[LED Indicators|Advanced#led-indicators]]
     1. [[Record Audio Files|Advanced#record-audio-files]]
