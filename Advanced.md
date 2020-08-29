@@ -102,6 +102,84 @@ sudo systemctl status callattendant.service
 - https://coreos.com/os/docs/latest/getting-started-with-systemd.html
 
 ***
+## LED Indicators
+I built a custom Raspberry Pi HAT to show the __callattendant__'s status with several LEDs. 
+
+- A blinking orange LED indicates an incoming call
+- A blinking green LED indicates a permitted/approved caller: _Get up and answer the phone._
+- A blinking red LED indicates a blocked/denied caller: _Stay seated._
+- A Blue LED indicates message activity: pulsing means unplayed messages are waiting; blinking means the caller is in the voice messaging menu; steady means a message is being recorded.
+- A 7-segment LEG shows the number of unplayed messages that are waiting
+
+I used the following prototype board to solder up the LEDs and connect them to the GPIO pins: _DIGOBAY 3pcs Prototype Breakout Shield PCB Expansion Board Breadboard DIY Kit for Raspberry Pi 4B 3B+ 3B 2B B+ A+_. Learn more: https://www.amazon.com/dp/B089M4GFWL/ref=cm_sw_em_r_mt_dp_P1TsFb6PN3ZZA
+
+### Diagrams
+Following are the Fritzing diagrams for my board:
+
+##### Empty PCM
+![PCB](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat_pcb.png)
+
+##### Wiring
+![wiring](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat_bb.png)
+
+##### Assembly List
+Label |	Part Type | Properties
+-----| ----- | -----
+7 SEG LED | Kingbright SA03-12HDB | pins 14; 
+BLU |	Blue (525nm) LED |	package 3 mm [THT]; color Blue (525nm); 
+GRN |	Green (555nm) LED |	package 3 mm [THT]; color Green (555nm);
+ORG |	Orange (620nm) LED |	package 3 mm [THT]; color Orange (620nm); 
+RED |	Red (633nm) LED	| package 3 mm [THT]; color Red (633nm); 
+R1 |	15Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 15Ω; pin spacing 400 mil
+R2 |	15Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 15Ω; pin spacing 400 mil
+R3 |	56Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 56Ω; pin spacing 400 mil
+R4 |	56Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 56Ω; pin spacing 400 mil
+R5 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R6 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R7 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R8 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R9 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R10 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R11 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+R12 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+
+##### Shopping List
+Amount | Part Type | Properties
+------ | --------- | -----------
+1 | Kingbright SA03-12HDB	| pins 14; 
+1 |	Blue (525nm) LED	| package 3 mm [THT]; color Blue (525nm)
+1 |	Green (555nm) LED	| package 3 mm [THT]; color Green (555nm); 
+1 |	Orange (620nm) LED	| package 3 mm [THT]; color Orange (620nm); 
+1 |	Red (633nm) LED |	| package 3 mm [THT]; color Red (633nm); 
+2 |	15Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 15Ω; pin spacing 400 mil
+2 |	56Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 56Ω; pin spacing 400 mil
+8 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
+
+### Configuration values
+#### LED Indicators
+LED | Color | GPIO
+------| -------- | ------
+Ring | ORG | GP14
+Approved | GRN | GP15
+Blocked | RED | GP17
+Message | BLU | GP4
+
+#### Kingbright LED Segments
+
+Segment | Pin | GPIO
+------ | -------- | --------
+a | 1 | GP11
+b | 13 | GP8
+c | 10 | GP25
+d | 8 | GP 5
+e | 7 | GP18
+f | 2 | GP9
+g | 11 | GP7
+dp | 6 | GP27 
+
+
+***
+
 ## Record Audio Files
 You can record your own audio wav files for playback to your callers.
 
