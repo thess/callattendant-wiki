@@ -118,7 +118,7 @@ I built a custom Raspberry Pi HAT to show the __callattendant__'s status with se
 - A blinking orange LED indicates an incoming call
 - A blinking green LED indicates a permitted/approved caller: _Get up and answer the phone._
 - A blinking red LED indicates a blocked/denied caller: _Stay seated._
-- A Blue LED indicates message activity: pulsing means unplayed messages are waiting; blinking means the caller is in the voice messaging menu; steady means a message is being recorded.
+- A pulsing blue LED indicates unplayed messages are waiting; blinking means the caller is in the voice messaging menu; steady means a message is being recorded.
 - A 7-segment LEG shows the number of unplayed messages that are waiting
 
 I used the following prototype board to solder up the LEDs and connect them to the GPIO pins: _DIGOBAY 3pcs Prototype Breakout Shield PCB Expansion Board Breadboard DIY Kit for Raspberry Pi 4B 3B+ 3B 2B B+ A+_. Learn more: https://www.amazon.com/dp/B089M4GFWL/ref=cm_sw_em_r_mt_dp_P1TsFb6PN3ZZA
