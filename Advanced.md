@@ -1,3 +1,11 @@
+# Call Attendant
+
+#### Contents
+1. [[Run as a Service|Advanced#run-as-a-service]]
+1. [[LED Indicators|Advanced#led-indicators]]
+1. [[Record Audio Files|Advanced#record-audio-files]]
+
+---
 ## Run as a Service
 We're going to define a service to automatically run the Call Attendant on the Raspberry Pi at start up. Our simple service will run the `callattendant.py` script and if by any means is aborted it is going to be restarted automatically. 
 
