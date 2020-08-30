@@ -176,7 +176,7 @@ This page is accessed by selecting _Messages_ from the main menu.
 
 ***
 
-## Viewing Permitted Numbers
+## Managing Permitted Numbers
 ### URL: `http://<pi-address>|<pi-hostname>:5000/permitted`
 The  _Permitted Numbers_ page is where you view the permitted numbers.
 This page is accessed by selecting _Permitted_ from the main menu.
@@ -187,7 +187,7 @@ This page is accessed by selecting _Permitted_ from the main menu.
 
 ***
 
-## Viewing Blocked Numbers
+## Managing Blocked Numbers
 ### URL: `http://<pi-address>|<pi-hostname>:5000/blocked`
 The  _Blocked Numbers_ page is where you view the blocked numbers.
 This page is accessed by selecting _Blocked_ from the main menu.
