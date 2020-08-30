@@ -121,9 +121,32 @@ I built a custom Raspberry Pi HAT to show the __callattendant__'s status with se
 - A pulsing blue LED indicates unplayed messages are waiting; blinking means the caller is in the voice messaging menu; steady means a message is being recorded.
 - A 7-segment LEG shows the number of unplayed messages that are waiting
 
+### Configuration values
+#### LED Indicators
+LED      | Color | GPIO
+---------| ----- | ------
+Ring     | ORG   | GP14
+Approved | GRN   | GP15
+Blocked  | RED   | GP17
+Message  | BLU   | GP4
+
+#### Kingbright LED Segments
+Message Count Indicator
+Segment | Pin | GPIO
+-- |---- | --------
+a  | 1  | GP11
+f  | 2  | GP9
+dp | 6  | GP27 
+e  | 7  | GP18
+d  | 8  | GP5
+c  | 10 | GP25
+g  | 11 | GP7
+b  | 13 | GP8
+
+### Assembly
 I used the following prototype board to solder up the LEDs and connect them to the GPIO pins: _DIGOBAY 3pcs Prototype Breakout Shield PCB Expansion Board Breadboard DIY Kit for Raspberry Pi 4B 3B+ 3B 2B B+ A+_. Learn more: https://www.amazon.com/dp/B089M4GFWL/ref=cm_sw_em_r_mt_dp_P1TsFb6PN3ZZA
 
-### Diagrams
+#### Diagrams
 Following are the Fritzing diagrams for my board:
 
 ##### Empty PCM
@@ -164,28 +187,6 @@ Amount | Part Type | Properties
 2 |	15Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 15Ω; pin spacing 400 mil
 2 |	56Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 56Ω; pin spacing 400 mil
 8 |	100Ω Resistor	| bands 4; package THT; tolerance ±5%; resistance 100Ω; pin spacing 400 mil
-
-### Configuration values
-#### LED Indicators
-LED | Color | GPIO
-------| -------- | ------
-Ring | ORG | GP14
-Approved | GRN | GP15
-Blocked | RED | GP17
-Message | BLU | GP4
-
-#### Kingbright LED Segments
-
-Segment | Pin | GPIO
------- | -------- | --------
-a | 1 | GP11
-b | 13 | GP8
-c | 10 | GP25
-d | 8 | GP 5
-e | 7 | GP18
-f | 2 | GP9
-g | 11 | GP7
-dp | 6 | GP27 
 
 
 ***
