@@ -39,7 +39,7 @@ and shared with the land-line phone wiring.
 * Your Raspberry Pi is connected to your home network via wireless or an RJ45 network connection.
 
 ##### Schematic
-![Hardware Connections](https://github.com/emxsys/callattendant/blob/master/docs/images/Deployment_View.png)
+![Hardware Connections](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Deployment_View.png)
 
 
 ### Software
