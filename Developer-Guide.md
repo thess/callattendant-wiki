@@ -269,36 +269,17 @@ sudo apt-get install sqlitebrowser
 sqlitebrowser callattendant.db
 ```
 
-### US Robotics 5637 Modem Resources
+### Raspberry Pi and US Robotics 5637 Modem Resources
 - [US Robotics 5637 User Guide](https://support.usr.com/support/5637/5637-ug/ref_cmd_use.html)
 - [USB Analog Modem with Raspberry Pi](https://iotbytes.wordpress.com/usb-analog-modem-with-raspberry-pi/)
 
 The following blogs from [IoT Bytes by Pradeep Singh](https://iotbytes.wordpress.com/) were very useful 
 for learning to how to program the Raspberry Pi and the US Robotics 5637 modem. His blog site has many 
-Raspberry Pi resources. Thanks Pradeep!
+Raspberry Pi resources. ___Thanks Pradeep!___
 
 - [Incoming Call Details Logger with Raspberry Pi](https://iotbytes.wordpress.com/incoming-call-details-logger-with-raspberry-pi/)
 - [Play Audio File on Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/play-audio-file-on-phone-line-with-raspberry-pi/)
 - [Record Audio from Phone Line with Raspberry Pi](https://iotbytes.wordpress.com/record-audio-from-phone-line-with-raspberry-pi/)
 
-### Python Upgrade on the Pi
-This information is not really necessary if your using virtual environments, but I keep it here for posterity.
 
-~Here's how I upgraded from 3.5.3 to 3.8.5:~
-
-```bash
-# Install prerequisites
-sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev tar wget vim
-
-# Download Python
-cd ~/Downloads/
-wget https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz
-
-# Install Python (this takes awhile)
-sudo tar zxf Python-3.8.5.tgz
-cd Python-3.8.5
-sudo ./configure --enable-optimizations
-sudo make -j 4
-sudo make altinstall
-```
 
