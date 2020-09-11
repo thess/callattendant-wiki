@@ -122,6 +122,25 @@ I built a custom Raspberry Pi HAT to show the __callattendant__'s status with se
 - A 7-segment LEG shows the number of unplayed messages that are waiting
 
 ### Configuration values
+
+```python
+# GPIO_LED_MESSAGE_COUNT_PINS: This is a tuple containing the GPIO pins for the 7-segment LED
+#   ordered by segment as thus: (a, b, c, d, e, f, g, dp)
+# GPIO_LED_MESSAGE_COUNT_KWARGS: This is a dictionary of optional arguments (used by GPIOZero LEDBoard)
+# ================================================================================================
+# V2 HAT
+GPIO_LED_MESSAGE_COUNT_PINS = (8, 7, 27, 23, 10, 11, 9, 18)
+GPIO_LED_MESSAGE_COUNT_KWARGS = {"active_high": True}
+# ================================================================================================
+# V1 HAT
+GPIO_LED_MESSAGE_COUNT_PINS = (11, 8, 25, 5, 18, 9, 7, 27)
+GPIO_LED_MESSAGE_COUNT_KWARGS = {"active_high": False}
+# ================================================================================================
+# Prototype HAT
+GPIO_LED_MESSAGE_COUNT_PINS = (10, 9, 8, 7, 4, 23, 11, 17)
+GPIO_LED_MESSAGE_COUNT_KWARGS = {"active_high": False}
+
+```
 #### LED Indicators
 LED      | Color | GPIO
 ---------| ----- | ------
@@ -132,16 +151,16 @@ Message  | BLU   | GP4
 
 #### Kingbright LED Segments
 Message Count Indicator
-Segment | Pin | GPIO
--- |---- | --------
-a  | 1  | GP11
-f  | 2  | GP9
-dp | 6  | GP27 
-e  | 7  | GP18
-d  | 8  | GP5
-c  | 10 | GP25
-g  | 11 | GP7
-b  | 13 | GP8
+Segment | Pin 
+-- |---- 
+a  | 1  
+f  | 2  
+dp | 6   
+e  | 7  
+d  | 8  
+c  | 10 
+g  | 11 
+b  | 13 
 
 ### Assembly
 I used the following prototype board to solder up the LEDs and connect them to the GPIO pins: _DIGOBAY 3pcs Prototype Breakout Shield PCB Expansion Board Breadboard DIY Kit for Raspberry Pi 4B 3B+ 3B 2B B+ A+_. Learn more: https://www.amazon.com/dp/B089M4GFWL/ref=cm_sw_em_r_mt_dp_P1TsFb6PN3ZZA
