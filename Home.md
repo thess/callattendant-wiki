@@ -128,12 +128,15 @@ After starting the system, you should see output of the form:
   BLOCK_ENABLED = True
   BLOCK_NAME_PATTERNS = {'V[0-9]{15}': 'Telemarketer Caller ID'}
   BLOCK_NUMBER_PATTERNS = {}
+  BLOCK_SERVICE = NOMOROBO
   DATABASE = data/callattendant.db
   DEBUG = False
   ENV = production
   PERMITTED_ACTIONS = ()
   PERMITTED_GREETING_FILE = resources/general_greeting.wav
   PERMITTED_RINGS_BEFORE_ANSWER = 4
+  PHONE_DISPLAY_FORMAT = ###-###-####
+  PHONE_DISPLAY_SEPARATOR = -
   ROOT_PATH = /home/pi/src/callattendant/callattendant
   SCREENED_ACTIONS = ('greeting', 'record_message')
   SCREENED_GREETING_FILE = resources/general_greeting.wav
@@ -195,6 +198,51 @@ Determines whether the permitted (whitelist) and blocked (blacklist) number list
 ```python
 # SCREENING_MODE: A tuple containing: "whitelist" and/or "blacklist", or empty
 SCREENING_MODE = ("whitelist", "blacklist")
+```
+##### Phone Display Separator
+The character used to format phone numbers. This character is used in the phone display format string that follows.
+```python
+# Defines the character used to format phone numbers, e.g, a space (" "), hyphen ("-"), period (".") or blank ("").
+PHONE_DISPLAY_SEPARATOR = "-"
+```
+##### Phone Display Format
+The template used to format how phone numbers are displayed.  
+```python
+# PHONE_DISPLAY_FORMAT: Define the formatting of phone numbers in the various lists. You must use the
+# separator character defined by PHONE_DISPLAY_SEPARATOR above in the format string.
+#
+#   The phone display format handles variable length phone numbers. Excess digits not included
+#   in the format string are prepended to the number with a separator.
+#   Define the format used for the majority of the phone numbers in your system.
+#
+#
+#  Example: US -> 01234567890 formats as 0-123-456-7890  
+#   PHONE_DISPLAY_FORMAT = "###-###-####"
+#
+#  Example: UK -> 01234567890 formats as 0123-456-7890
+#   PHONE_DISPLAY_FORMAT = "####-###-####"
+#
+#  Example: FR -> 01234567890 formats as 01-234-56-78-90
+#   PHONE_DISPLAY_FORMAT = "###-##-##-##"
+#
+#  Example: AU -> 01234567890 formats as 01-23-456-7890
+#   PHONE_DISPLAY_FORMAT = "##-##-###-####"
+#
+#  Example: Raw -> 01234567890 formats as 01234567890
+#  PHONE_DISPLAY_FORMAT = ""
+#
+PHONE_DISPLAY_FORMAT = "###-###-####"
+```
+
+##### Online Lookup Service
+The name of the online service used to lookup robocallers and spam numbers. NomoRobo is the service used in the USA.
+```python
+#   Currently, only NOMOROBO is supported and it is for the USA. Areas outside the USA should set
+#   to blank. When the online service is blank (disabled), only the blacklist and blocked
+#   name/number patterns are used to block numbers.
+#
+#   Example: "NOMOROBO" (USA)  or "" (disabled).
+BLOCK_SERVICE = "NOMOROBO"
 ```
 ##### Name Patterns
 Blocks callers whose caller ID name match a regular expression:
