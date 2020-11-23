@@ -254,7 +254,7 @@ The development plan's [phase objectives](https://github.com/emxsys/callattendan
 - [x] Iteration #C2: [v0.4](https://github.com/emxsys/callattendant/releases/tag/v0.4) Beta
 - [x] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/releases/tag/v0.5) Release candidate
 ### [Transition Phase](https://github.com/emxsys/callattendant/projects/4)
-- [ ] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Release+1.0%22)
+- [x] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/releases/tag/v1.0)
 
 ***
 
