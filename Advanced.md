@@ -114,7 +114,7 @@ sudo systemctl status callattendant.service
 ## LED Indicators
 I built a custom Raspberry Pi HAT to show the __callattendant__'s status with several LEDs. 
 
-![prototype](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat-prototype.jpg)
+![prototype](https://github.com/thess/callattendant/raw/fmsentry/docs/callattendant-hat-prototype.jpg)
 
 - A blinking orange LED indicates an incoming call
 - A blinking green LED indicates a permitted/approved caller: _Get up and answer the phone._
@@ -170,10 +170,10 @@ I used the following prototype board to solder up the LEDs and connect them to t
 Following are the Fritzing diagrams for my board:
 
 ##### Empty PCM
-![PCB](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat_pcb.png)
+![PCB](https://github.com/thess/callattendant/raw/fmsentry/docs/callattendant-hat_pcb.png)
 
 ##### Wiring
-![wiring](https://github.com/emxsys/callattendant/raw/master/docs/callattendant-hat_bb.png)
+![wiring](https://github.com/thess/callattendant/raw/fmsentry/docs/callattendant-hat_bb.png)
 
 ##### Assembly List
 Label |	Part Type | Properties

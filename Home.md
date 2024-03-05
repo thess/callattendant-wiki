@@ -12,19 +12,19 @@
 * [[Advanced|Advanced]]
 
 ## Overview
-The Call Attendant (__callattendant__) is a python-based, automated call attendant that runs on a lightweight Raspberry Pi or other Linux-based system. Coupled with a modem, it provides a call blocker and voice messaging system that can screen callers and block robocall and scams from your landline.
+The Call Attendant (__callattendant__) is a python-based, automated call attendant that runs on a lightweight Linux-based system such a Raspberry Pi. Coupled with a modem, it provides a call blocker and voice messaging system that can screen callers and block robocall and scams from your landline.
 
 This wiki page shows you how to setup and run the __callattendant__. If you'd like a preview of what you can do with it, check out the [[User Guide|User-Guide]].
 
 ##### _Home Page_
-![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
+![Dashboard - Small](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-responsive.png)
 
 ### Hardware
-- Raspberry Pi 3B+ or better
-- US Robotics 5637 Modem
+- Raspberry Pi 3B+ or equivalent (Linux system with Python3)
+- A 56K V.92 Data + Fax modem compatible with the **U.S. Robotics USR5637** or any device using a **Conexant CX930xx** modem
 
 ##### _Raspberry Pi 3B+ and USR5637 modem_
-![Raspberry Pi and USR5637 Modem](https://github.com/emxsys/callattendant/raw/master/docs/raspberry_pi-modem.jpg)
+![Raspberry Pi and USR5637 Modem](https://github.com/thess/callattendant/blob/fmsentry/docs/raspberry_pi-modem.jpg)
 
 ***
 
@@ -32,14 +32,14 @@ This wiki page shows you how to setup and run the __callattendant__. If you'd li
 This section describes how to install the hardware and the software.
 
 ### Hardware
-* The USR5637 Modem is connect to your Raspberry Pi via USB.
-* Your home phone land-line system is connected to the USR5637 Modem via the RJ11 connection to a wall jack,
+* The V.92 Modem is connected to your system via USB.
+* Your home phone land-line system is connected to the V.92 Modem via the RJ11 connection to a wall jack,
 or to a splitter connected to a wall jack and shared with a phone, or a splitter connected to your Telco modem
 and shared with the land-line phone wiring.
-* Your Raspberry Pi is connected to your home network via wireless or an RJ45 network connection.
+* Your computer is connected to your home network via wireless or an RJ45 ethernet connection.
 
 ##### Schematic
-![Hardware Connections](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Deployment_View.png)
+![Hardware Connections](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Deployment_View.png)
 
 
 ### Software
@@ -67,7 +67,7 @@ which python
 # /home/pi/venv/bin/python
 
 python --version
-# Python 3.7.3
+# Python 3.9.2
 ```
 Later, when you install the __callattendant__ software, it will be placed within the virtual environment
 folder (under `lib/python3.x/site-packages` to be exact). The virtual environment, when activated, alters
@@ -77,13 +77,13 @@ your _PATH_ so that the system looks for python and its packages within this fol
 The software is available on [PyPI](https://pypi.org/project/callattendant/). Install and update using `pip`:
 ```bash
 # Using the virtual environment you use "pip" to install the software
-pip install callattendant
+pip install https://github.com/thess/callattendant/releases/download/v1.6.5/callattendant-1.6.5-py3-none-any.whl
 
 # However, if your not using the virtual environment, you must use "pip3" on the Pi
 pip3 install callattendant
 ```
 
-If your not using the virtual environment, you may need to reboot or logoff/login to update the
+If you are not using a virtual environment, you may need to reboot or logoff/login to update the
 `$PATH` for your profile in order to find and use the `callattendant` command.
 
 ***

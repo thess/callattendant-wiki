@@ -1,4 +1,4 @@
-[[Call Attendant Web Page|https://emxsys.github.io/callattendant/]]
+[[Call Attendant Web Page|https://thess.github.io/callattendant/]]
 1. [[Wiki Home|home]]
     1. [[Installation|Home#installation]]
     1. [[Configuration|Home#configuration]]

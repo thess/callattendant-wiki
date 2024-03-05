@@ -32,7 +32,7 @@ http://pi-blocker:5000
 ```
 Following is an example of the home page you will see:
 ##### _Home page examples on an IPad Pro and Pixel2 phone_
-![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-responsive.png)
+![Dashboard - Small](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-responsive.png)
 
 The __callattendant__'s web interface uses a responsive design,meaning you can review your calls and messages on your cell phone,
 tablet or computer.
@@ -47,10 +47,10 @@ the same network as the Pi.
 ## Navigation
 The __callattendant__ uses a consistent menu across the entire application. The menu adapts to your screen size.  
 ##### _Main Menu_
-![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar.png)
+![Main Menu](https://github.com/thess/callattendant/blob/fmsentry/docs/callattendant-navbar.png)
 
 ##### _Main Menu expanded on phone_
-![Main Menu](https://github.com/emxsys/callattendant/blob/master/docs/callattendant-navbar-pixel2.png)
+![Main Menu](https://github.com/thess/callattendant/blob/fmsentry/docs/callattendant-navbar-pixel2.png)
 
 * **Call Attendant** displays the Home page / Dashboard. This menu item is always in view.
 * **Calls** displays the Call Log / Call History page.
@@ -67,14 +67,14 @@ The __callattendant__ uses a consistent menu across the entire application. The 
 ## Home Screen
 ### URL: `http://<pi-address>|<pi-hostname>:5000`
 ##### _Dashboard | Home Page on IPad_
-![Dashboard - Small](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-ipad.png)
+![Dashboard - Small](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-ipad.png)
 
 The Dashboard is the home page for the application. This screen provides metrics and convenient 
 access to the last 10 calls received.
 
 ---
 #### Statistics
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-statistics.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-statistics.png)
 
 Here we have some overall statistics since the Call Attendant was installed.
 * **Calls Processed** is the overall number of calls received. This is also a link to the Call Log.
@@ -83,14 +83,14 @@ Here we have some overall statistics since the Call Attendant was installed.
 
 ---
 #### New Messages
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-messages-waiting.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-messages-waiting.png)
 
 This button appears when there are new voices messages waiting to be played. Clicking this button
 will take you to the Messages page.
 
 ---
 #### Recent Calls
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-recent-calls.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-recent-calls.png)
 
 This section shows you the last 10 calls received.
 
@@ -100,19 +100,19 @@ This section shows you the last 10 calls received.
 
 ---
 #### Calls per Day
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-calls-per-date.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-calls-per-date.png)
 
 This stacked bar graph displays the number of calls per day for the last 30 days. 
 
 ---
 #### Top Permitted Callers
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-permitted-callers.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-top-permitted-callers.png)
 
 This list shows the top permitted and screened callers (aka allowed callers) since the application was installed.
 
 ---
 #### Top Blocked Callers
-![Dashboard](https://github.com/emxsys/callattendant/blob/master/docs/dashboard-top-blocked-callers.png)
+![Dashboard](https://github.com/thess/callattendant/blob/fmsentry/docs/dashboard-top-blocked-callers.png)
 
 This list shows the top blocked callers (aka denied callers) since the application was installed.
 
@@ -135,7 +135,7 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 - __Screened__: the caller was not found in the _Blocked Numbers_ list and did not appear as a robocaller or other nuisance. The call was not blocked.
 
 ##### _Call Log Example_
-![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/call-log-ipad.png)
+![Call Log](https://github.com/thess/callattendant/blob/fmsentry/docs/call-log-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -144,7 +144,7 @@ membership in the [[Permitted Numbers|User-Guide#viewing-permitted-numbers]] and
 ### URL: `http://<pi-address>|<pi-hostname>:5000/calls/view/<call-number>`
 
 ##### _Viewing Call Example On Phone_
-![Call Log](https://github.com/emxsys/callattendant/blob/master/docs/view-call-pixel2.png)
+![Call Log](https://github.com/thess/callattendant/blob/fmsentry/docs/view-call-pixel2.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -159,7 +159,7 @@ a member of both lists, however the _Permitted Number_ membership will have
 precedence over the _Blocked Number_. This page is accessed by clicking/selecting
 a caller on the [[Call Log|User-Guide#the-call-log]] page.
 ##### _Manage Callers example_
-![Manage Caller](https://github.com/emxsys/callattendant/blob/master/docs/manage-caller-pixel2.png)
+![Manage Caller](https://github.com/thess/callattendant/blob/fmsentry/docs/manage-caller-pixel2.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -170,7 +170,7 @@ a caller on the [[Call Log|User-Guide#the-call-log]] page.
 The _Messages_ page is where you listen to and/or delete voices messages left by callers.
 This page is accessed by selecting _Messages_ from the main menu.
 ##### _Messages example_
-![Messages](https://github.com/emxsys/callattendant/blob/master/docs/messages-ipad.png)
+![Messages](https://github.com/thess/callattendant/blob/fmsentry/docs/messages-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -181,7 +181,7 @@ This page is accessed by selecting _Messages_ from the main menu.
 The  _Permitted Numbers_ page is where you view the permitted numbers.
 This page is accessed by selecting _Permitted_ from the main menu.
 ##### _Permitted Numbers Example_
-![Permitted Numbers](https://github.com/emxsys/callattendant/blob/master/docs/permitted-numbers-ipad.png)
+![Permitted Numbers](https://github.com/thess/callattendant/blob/fmsentry/docs/permitted-numbers-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 
@@ -192,7 +192,7 @@ This page is accessed by selecting _Permitted_ from the main menu.
 The  _Blocked Numbers_ page is where you view the blocked numbers.
 This page is accessed by selecting _Blocked_ from the main menu.
 ##### _Blocked Numbers Example_
-![Blocked Numbers](https://github.com/emxsys/callattendant/blob/master/docs/blocked-numbers-ipad.png)
+![Blocked Numbers](https://github.com/thess/callattendant/blob/fmsentry/docs/blocked-numbers-ipad.png)
 
 ###### _[[Back to Contents|User-Guide#contents]]_
 

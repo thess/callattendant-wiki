@@ -12,8 +12,8 @@
 
 You need a copy of this repository placed in a folder on your pi, e.g., `/pi/home/callattendant`. You can use a different folder if you want (I prefer `/home/pi/src/callattendant`). These instructions use the home folder just to keep them simple.
 
-You can either clone this repository, or [download a zip file](https://github.com/emxsys/callattendant/archive/master.zip),
-or download a specific release from [Releases](https://github.com/emxsys/callattendant/releases).
+You can either clone this repository, or [download a zip file](https://github.com/thess/callattendant/archive/fmsentry.zip),
+or download a specific release from [Releases](https://github.com/thess/callattendant/releases).
 
 ##### Clone with Git
 
@@ -22,20 +22,20 @@ Here's how clone the repository with `git` into your home folder.
 Using HTTPS
 ```bash
 cd 
-git clone https://github.com/emxsys/callattendant.git
+git clone https://github.com/thess/callattendant.git
 cd callattendant
 ```
 
 Using SSH (see [GitHub: About SSH](https://docs.github.com/en/github/authenticating-to-github/about-ssh))
 ```bash
 cd 
-git clone git@github.com:emxsys/callattendant.git
+git clone git@github.com:thess/callattendant.git
 cd callattendant
 ```
 ##### Download Zip
 
-If you [download the latest code](https://github.com/emxsys/callattendant/archive/master.zip) or a
-specific release, the unzpped folder will be named `callattendant-master` or `callattendant-<release_tag>` 
+If you [download the latest code](https://github.com/thess/callattendant/archive/fmsentry.zip) or a
+specific release, the unzpped folder will be named `callattendant-fmsentry` or `callattendant-<release_tag>` 
 depending on what you downloaded. You can rename it if you wish. Here's how unzip it into your home folder.
 
 ```bash
@@ -201,60 +201,60 @@ This document provides a comprehensive architectural overview of the system, usi
 This section describes what software architecture is for the current system, and how it is represented. Of the Use-Case, Logical, Process, Deployment, and Implementation Views, it enumerates the views that are necessary, and for each view, explains what types of model elements it contains.
 
 ###### _Rational Unified Process 4+1 View_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/RUP_41_View.png "RUP 4+1 View")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/RUP_41_View.png "RUP 4+1 View")
 
 ### Use Case View
 This section contains use cases or scenarios from the use-case model if they represent some significant, central functionality of the final system, or if they have a large architectural coverage—they exercise many architectural elements or if they stress or illustrate a specific, delicate point of the architecture.
 
 ###### _Use Case Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Use_Case_View.png "Use Case Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Use_Case_View.png "Use Case Diagram")
 
 ### Logical View
 This section describes the architecturally significant parts of the design model, such as its decomposition into subsystems and packages. And for each significant package, its decomposition into classes and class utilities. You should introduce architecturally significant classes and describe their responsibilities, as well as a few very important relationships, operations, and attributes.
 
 ###### _Class Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Logical_View.png "Logical View Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Logical_View.png "Logical View Diagram")
 
 ### Process View
 This section describes the system's decomposition into lightweight processes (single threads of control) and heavyweight processes (groupings of lightweight processes). Organize the section by groups of processes that communicate or interact. Describe the main modes of communication between processes, such as message passing, interrupts, and rendezvous.
 
 ###### _Activity Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Process_View.png "Process View Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Process_View.png "Process View Diagram")
 
 ###### _Sequence Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Main_Sequence_Diagram.png "Main Sequence Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Main_Sequence_Diagram.png "Main Sequence Diagram")
 
 ### Implementation View
 This section describes the overall structure of the implementation model, the decomposition of the software into layers and subsystems in the implementation model, and any architecturally significant components.
 
 ###### _Component Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Implementation_View.png "Implementation Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Implementation_View.png "Implementation Diagram")
 
 ### Deployment View
 This section describes one or more physical network (hardware) configurations on which the software is deployed and run. It is a view of the Deployment Model. At a minimum for each configuration it should indicate the physical nodes (computers, CPUs) that execute the software and their interconnections (bus, LAN, point-to-point, and so on.) Also include a mapping of the processes of the Process View onto the physical nodes.
 ###### _Deployment Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Deployment_View.png "Deployment Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Deployment_View.png "Deployment Diagram")
 
 ### Data View
 This section contains a description of the persistent data storage perspective of the system. This section is optional if there is little or no persistent data, or the translation between the Design Model and the Data Model is trivial.
 
 ###### _Entity Relationship Diagram_
-![Alt text](https://github.com/emxsys/callattendant/blob/master/docs/design/images/Data_View.png "Entity Relationship Diagram")
+![Alt text](https://github.com/thess/callattendant/blob/fmsentry/docs/design/images/Data_View.png "Entity Relationship Diagram")
 
 ***
 
 ## Software Development Plan
-The development plan's [phase objectives](https://github.com/emxsys/callattendant/projects?query=is%3Aopen+sort%3Acreated-asc) are captured in the GitHub projects.
-### [Inception Phase](https://github.com/emxsys/callattendant/projects/1)
-- [x] Iteration #I1: [v0.1](https://github.com/emxsys/callattendant/releases/tag/v0.1)
-### [Elaboration Phase](https://github.com/emxsys/callattendant/projects/2)
-- [x] Iteration #E1: [v0.2](https://github.com/emxsys/callattendant/releases/tag/v0.2)
-### [Construction Phase](https://github.com/emxsys/callattendant/projects/3)
-- [x] Iteration #C1: [v0.3](https://github.com/emxsys/callattendant/releases/tag/v0.3) Alpha
-- [x] Iteration #C2: [v0.4](https://github.com/emxsys/callattendant/releases/tag/v0.4) Beta
-- [x] Iteration #C3: [v0.5](https://github.com/emxsys/callattendant/releases/tag/v0.5) Release candidate
-### [Transition Phase](https://github.com/emxsys/callattendant/projects/4)
-- [x] Iteration #T1: [v1.0](https://github.com/emxsys/callattendant/releases/tag/v1.0.0)
+The development plan's [phase objectives](https://github.com/thess/callattendant/projects?query=is%3Aopen+sort%3Acreated-asc) are captured in the GitHub projects.
+### [Inception Phase](https://github.com/thess/callattendant/projects/1)
+- [x] Iteration #I1: [v0.1](https://github.com/thess/callattendant/releases/tag/v0.1)
+### [Elaboration Phase](https://github.com/thess/callattendant/projects/2)
+- [x] Iteration #E1: [v0.2](https://github.com/thess/callattendant/releases/tag/v0.2)
+### [Construction Phase](https://github.com/thess/callattendant/projects/3)
+- [x] Iteration #C1: [v0.3](https://github.com/thess/callattendant/releases/tag/v0.3) Alpha
+- [x] Iteration #C2: [v0.4](https://github.com/thess/callattendant/releases/tag/v0.4) Beta
+- [x] Iteration #C3: [v0.5](https://github.com/thess/callattendant/releases/tag/v0.5) Release candidate
+### [Transition Phase](https://github.com/thess/callattendant/projects/4)
+- [x] Iteration #T1: [v1.0](https://github.com/thess/callattendant/releases/tag/v1.0.0)
 
 ***
 
