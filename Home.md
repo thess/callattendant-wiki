@@ -74,8 +74,16 @@ folder (under `lib/python3.x/site-packages` to be exact). The virtual environmen
 your _PATH_ so that the system looks for python and its packages within this folder hierarchy. 
 
 #### Install the Software
-Currently, the software is not available on [PyPI](https://pypi.org).
-Instead, you can download the lastest Python wheel and from [here](https://github.com/thess/callattendant/releases) and install using `pip install <file>`.
+The software is available on [PyPI](https://pypi.org). Install and update using pip:
+
+```bash
+# Using the virtual environment you use "pip" to install the software
+pip install callattendant
+
+# However, if your not using the virtual environment, you must use "pip3" on the Pi
+pip3 install callattendant
+```
+Alternatively, you can download the lastest Python wheel and from [here](https://github.com/thess/callattendant/releases) and install using `pip install <file>`.
 
 ```bash
 # Using the virtual environment you use "pip" to install the software
