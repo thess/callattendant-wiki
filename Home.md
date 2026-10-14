@@ -67,7 +67,7 @@ which python
 # /home/pi/venv/bin/python
 
 python --version
-# Python 3.9.2
+# Python 3.11.2
 ```
 Later, when you install the __callattendant__ software, it will be placed within the virtual environment
 folder (under `lib/python3.x/site-packages` to be exact). The virtual environment, when activated, alters
@@ -87,14 +87,29 @@ Alternatively, you can download the lastest Python wheel and from [here](https:/
 
 ```bash
 # Using the virtual environment you use "pip" to install the software
-pip install callattendant-1.6.5-py3-none-any.whl
+pip install callattendant-2.4.0-py3-none-any.whl
 
 # However, if your not using the virtual environment, you must use "pip3" on the Pi
-pip3 install callattendant-1.6.5-py3-none-any.whl
+pip3 install callattendant-2.4.0-py3-none-any.whl
 ```
 
 If you are not using a virtual environment, you may need to reboot or logoff/login to update the
 `$PATH` for your profile in order to find and use the `callattendant` command.
+
+#### Installation and upgrading notes
+
+1. You can directly upgrade a __callattendant__ installation by supplying the `--upgrade` option
+to "pip" within the environment the software was installed.
+
+2. To force an install to overwrite an existing (or broken) installation, you can use the
+`--force-reinstall` option to "pip".
+
+3. If you have data from a previous installation of __callattendant__, first install a fresh copy
+of __callattendant__ and start it with the `--create-folder` option before restoring you data.
+
+4. Upgrades to __callattendant__ will always preserve your data and configuration options.
+New options will use default values. Any DB schema changes will be upgraded upon initial
+startup automatically.
 
 ***
 

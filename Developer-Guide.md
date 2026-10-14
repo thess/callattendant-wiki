@@ -69,7 +69,7 @@ which python
 # /home/pi/venv/bin/python
 
 python --version
-# Python 3.7.3
+# Python 3.11.2
 ```
 
 #### Install Packages
@@ -168,11 +168,11 @@ Excerpts from https://packaging.python.org/tutorials/packaging-projects/
 
 ##### Build the distribution
 ```bash
-# Make sure you have the latest versions of setuptools and wheel installed:
-python -m pip install --user --upgrade setuptools wheel
+# Make sure you have the latest versions of setuptools, wheel and build installed:
+python -m pip install --user --upgrade setuptools wheel build
 
-# Now run this command from the same directory where setup.py is located:
-python setup.py sdist bdist_wheel
+# Now run this command from the same directory where pyproject.toml is located:
+python -m build
 ```
 
 ##### Uploading to TestPyPI
